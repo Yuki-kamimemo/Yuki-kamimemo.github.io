@@ -71,6 +71,7 @@ Assert-Contains "index.html" "/guides/loh/2026-05-kyoto-1200/" "home page must k
 Assert-Contains "_layouts/category-list.html" "/guides/loh/2026-05-kyoto-1200/" "race category list must keep a fallback link to the existing LoH guide"
 Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "sources:" "LoH guide page must declare sources front matter"
 Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "permalink:\s+/guides/loh/2026-05-kyoto-1200/" "May 2026 LoH guide must use its public URL"
+Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "layout:\s+guide" "LoH guide page must explicitly use the guide layout"
 Assert-Contains "AGENTS.md" "Jekyll Collection" "AGENTS.md must document Jekyll collection operations"
 Assert-Contains "README.md" "_race/" "README.md must summarize the Jekyll collection structure"
 Assert-Contains ".gitignore" "_site/" ".gitignore must ignore Jekyll output"
