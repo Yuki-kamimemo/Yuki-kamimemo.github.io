@@ -12,6 +12,14 @@
 - デザインは明るい攻略メモ調にする。カード、表、バッジ、コールアウト、ページ内ナビを使い、情報をスキャンしやすくする。
 - UI文言は短く具体的にする。攻略メモとしてすぐ読める構成を優先する。
 
+## ローカル作業ファイルの扱い
+
+- 計画書、設計書、調査メモ、実装メモ、レビュー用メモなど、公開サイトを構成するためではなく「ファイルを編集するためだけ」に作る補助ファイルはGitHubにアップロードしない。
+- それらの補助ファイルを入れるフォルダもGitHubにアップロードしない。現在は `docs/` と `.codex-local/` をGit管理外として扱う。
+- 新しい補助フォルダを作る必要がある場合は、作成前に `.gitignore` に追加し、`git ls-files <path>` で追跡対象になっていないことを確認する。
+- 過去に追跡された補助ファイルを見つけた場合は、ローカルの実ファイルを残したまま `git rm --cached` でGit管理から外す。
+- 公開サイトに必要なHTML、CSS、Jekyll layout/include/data、画像、検証スクリプト、README、AGENTS.mdだけをGitHubに上げる。
+
 ## コメント欄運用
 
 - ガイドページのコメント欄は `giscus` を使い、GitHub Discussions に保存する。
@@ -201,7 +209,7 @@
 
 ## Jekyll Collection 運用
 
-このサイトは GitHub Pages 標準の Jekyll でビルドする。設計の根拠は `docs/superpowers/specs/2026-04-29-jekyll-extensibility-design.md` を参照する。
+このサイトは GitHub Pages 標準の Jekyll でビルドする。設計の根拠はローカル作業メモの `docs/superpowers/specs/2026-04-29-jekyll-extensibility-design.md` にあるが、`docs/` はGit管理外なのでGitHubには上げない。
 
 ### Collection 一覧
 
@@ -308,6 +316,7 @@ Copy-Item templates/race-guide.html guides/<event>/<slug>/index.html
 - `git status --short`
 - `powershell -ExecutionPolicy Bypass -File scripts/validate_jekyll_structure.ps1`
 - `.codex-local/` が Git 管理対象になっていないこと。
+- `docs/` が Git 管理対象になっていないこと。
 - 生成HTMLに canonical、OG、favicon、description があること。
 - ガイドページの生成HTMLに `/assets/css/guide.css` が含まれること。
 - ガイドページURLが404ではなく、YAML front matterが本文に表示されていないこと。
