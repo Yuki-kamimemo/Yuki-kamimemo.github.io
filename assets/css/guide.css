@@ -45,10 +45,46 @@
       text-decoration: underline;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     .page {
       max-width: 1180px;
       margin: 0 auto;
       padding: 30px 18px 72px;
+    }
+
+    .page-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .page-actions a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 7px 14px;
+      background: var(--paper-strong);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(81, 54, 20, 0.08);
+    }
+
+    .page-actions a:hover {
+      background: var(--blue-soft);
+      text-decoration: none;
+    }
+
+    .page-actions-top {
+      margin-bottom: 14px;
+    }
+
+    .page-actions-bottom {
+      justify-content: center;
+      margin-bottom: 12px;
     }
 
     .hero {
