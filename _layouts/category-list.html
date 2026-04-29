@@ -11,7 +11,7 @@ css: list
   </div>
 </section>
 
-{% assign items = site[page.category] | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
+{% assign items = site.pages | where_exp: 'item', 'item.layout == "guide"' | where_exp: 'item', 'item.category == page.category' | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
 <section class="section" aria-labelledby="category-guides-heading">
   <h2 class="section-title" id="category-guides-heading">記事一覧</h2>
   <div class="guide-list">

@@ -236,6 +236,7 @@ sources:
 - `tags`: 推奨。タグ一覧とカード表示に使う。
 - `event`: 任意。`loh`、`champion`、`team`、`daily`、`training` など。
 - `status`: 任意。`draft` は一覧やトップから除外する。
+- `category`: ガイド記事では必須。カテゴリ一覧に出すため、レース攻略は `race`、育成は `training`、サポカは `support`、因子は `factor`、コースは `course` を入れる。
 - `layout`: ガイドページでは必須。必ず `guide`。
 - `css`: ガイドページでは必須。必ず `guide`。
 - `permalink`: 必須。公開URLと一致させる。
@@ -263,7 +264,12 @@ New-Item -ItemType Directory -Force -Path guides/<event>/<slug>
 Copy-Item templates/race-guide.html guides/<event>/<slug>/index.html
 ```
 
-その後、front matter の `layout: guide`、`css: guide`、`permalink`、`title`、`description`、`date`、`modified`、`tags`、`sources` を書き換え、本文の標準セクションを埋める。作成後は `powershell -ExecutionPolicy Bypass -File scripts/validate_jekyll_structure.ps1` を通し、公開URLにアクセスしてCSS適用まで確認する。
+その後、front matter の `layout: guide`、`css: guide`、`permalink`、`title`、`description`、`date`、`modified`、`tags`、`event`、`category`、`sources` を書き換え、本文の標準セクションを埋める。作成後は `powershell -ExecutionPolicy Bypass -File scripts/validate_jekyll_structure.ps1` を通し、公開URLにアクセスしてCSS適用まで確認する。
+
+### 一覧生成の注意
+
+- トップページ、カテゴリ一覧、タグ一覧は `site.pages` から `layout: guide` の通常ページを拾う。公開記事の実体は `guides/<event>/<slug>/index.html` なので、`site.race` などcollectionだけを一覧ソースにしない。
+- カテゴリ一覧は `category` front matter で絞り込む。新規ガイドに `category` がないと `/race/` などの一覧に表示されない。
 
 ### タグ運用
 

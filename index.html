@@ -26,7 +26,7 @@ permalink: /
   </div>
 </section>
 
-{% assign all_guides = site.race | concat: site.training | concat: site.support | concat: site.factor | concat: site.course | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
+{% assign all_guides = site.pages | where_exp: 'item', 'item.layout == "guide"' | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
 <section class="section" aria-labelledby="guides-heading">
   <h2 class="section-title" id="guides-heading">攻略ページ</h2>
   <div class="guide-list">
