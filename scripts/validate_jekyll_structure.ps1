@@ -19,6 +19,14 @@ function Assert-Contains {
   }
 }
 
+function Assert-NoUtf8Bom {
+  param([string]$Path)
+  $bytes = [System.IO.File]::ReadAllBytes($Path)
+  if ($bytes.Length -ge 3 -and $bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF) {
+    throw "UTF-8 BOM prevents Jekyll from reading front matter: $Path"
+  }
+}
+
 $requiredPaths = @(
   "_config.yml",
   "_layouts/default.html",
@@ -47,6 +55,10 @@ $requiredPaths = @(
 foreach ($path in $requiredPaths) {
   Assert-Exists $path
 }
+
+Get-ChildItem -Recurse -Include *.html,*.md -File |
+  Where-Object { $_.FullName -notmatch "\\.git\\" } |
+  ForEach-Object { Assert-NoUtf8Bom $_.FullName }
 
 Assert-Contains "_config.yml" "permalink:\s+/guides/race/:path/" "_config.yml must output race guides under /guides/race/:path/"
 Assert-Contains "_config.yml" "future:\s+true" "_config.yml must include future-dated guide documents in collection lists"
