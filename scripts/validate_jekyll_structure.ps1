@@ -33,7 +33,7 @@ $requiredPaths = @(
   "_includes/tags.html",
   "_data/tags.yml",
   "_data/sources.yml",
-  "_race/2026-05-kyoto-1200.html",
+  "guides/loh/2026-05-kyoto-1200/index.html",
   "templates/race-guide.html",
   "race/index.html",
   "training/index.html",
@@ -57,8 +57,8 @@ Assert-Contains "_includes/sources.html" "page\.sources" "sources include must b
 Assert-Contains "index.html" "site\.race" "home page must read collection articles"
 Assert-Contains "index.html" "/guides/loh/2026-05-kyoto-1200/" "home page must keep a fallback link to the existing LoH guide"
 Assert-Contains "_layouts/category-list.html" "/guides/loh/2026-05-kyoto-1200/" "race category list must keep a fallback link to the existing LoH guide"
-Assert-Contains "_race/2026-05-kyoto-1200.html" "sources:" "migrated race guide must declare sources front matter"
-Assert-Contains "_race/2026-05-kyoto-1200.html" "permalink:\s+/guides/loh/2026-05-kyoto-1200/" "May 2026 LoH guide must keep its original public URL"
+Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "sources:" "LoH guide page must declare sources front matter"
+Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "permalink:\s+/guides/loh/2026-05-kyoto-1200/" "May 2026 LoH guide must use its public URL"
 Assert-Contains "AGENTS.md" "Jekyll Collection" "AGENTS.md must document Jekyll collection operations"
 Assert-Contains "README.md" "_race/" "README.md must summarize the Jekyll collection structure"
 Assert-Contains ".gitignore" "_site/" ".gitignore must ignore Jekyll output"

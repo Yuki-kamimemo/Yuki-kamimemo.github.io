@@ -88,7 +88,7 @@
 
 ## ガイドページ構造
 
-ガイドページは `_race/<slug>.html` などのJekyll Collectionに置き、`assets/css/guide.css` を使う。構造は現在の `_race/2026-05-kyoto-1200.html` を基準にする。
+ガイドページは公開URLと同じ `guides/<event>/<slug>/index.html` に置き、`assets/css/guide.css` を使う。構造は現在の `guides/loh/2026-05-kyoto-1200/index.html` を基準にする。
 
 1. `skip-link`
    - `<a class="skip-link" href="#main">本文へスキップ</a>` を置く。
