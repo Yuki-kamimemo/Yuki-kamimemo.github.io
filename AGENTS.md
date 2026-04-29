@@ -90,6 +90,15 @@
 
 ガイドページは公開URLと同じ `guides/<event>/<slug>/index.html` に置き、`assets/css/guide.css` を使う。構造は現在の `guides/loh/2026-05-kyoto-1200/index.html` を基準にする。
 
+### Jekyll front matter 必須ルール
+
+- ガイドページは `_race/` などのcollectionだけに置かない。GitHub Pagesで出力されずリンク先が404になる事故があったため、公開したい記事は必ず公開URLと同じ `guides/<event>/<slug>/index.html` に置く。
+- `guides/<event>/<slug>/index.html` のfront matterには `layout: guide` と `css: guide` を必ず明示する。通常ページにはcollection defaultsが効かないため、これを忘れると本文だけが出たり `home.css` が読み込まれたりする。
+- `permalink` は公開URLと一致させる。例: `permalink: /guides/loh/2026-05-kyoto-1200/`。
+- front matterファイルはUTF-8 BOMなしで保存する。BOM付きだとJekyllが先頭の `---` をfront matterとして認識せず、YAMLが本文にそのまま表示される。
+- PowerShellでファイルを書き換える場合、BOMが入ることがある。日本語ファイルを編集した後は `scripts/validate_jekyll_structure.ps1` でBOM禁止チェックを通す。
+- 公開前後の確認では、ページ本文だけでなく生成HTMLに `<!doctype html>`、`/assets/css/guide.css`、`.hero` が含まれることを確認する。
+
 1. `skip-link`
    - `<a class="skip-link" href="#main">本文へスキップ</a>` を置く。
 2. `<main class="page" id="top">`
@@ -194,10 +203,12 @@
 
 ### front matter スキーマ
 
-攻略記事は `_race/` などの collection に置き、`layout` と `category` は `_config.yml` の `defaults` に任せる。
+攻略記事は公開URLと同じ `guides/<event>/<slug>/index.html` に置く。`_race/` などのcollectionだけに置く運用は、GitHub Pagesで記事が生成されず404になったため使わない。collectionは将来の一覧生成補助として残しているが、公開記事の実体は `guides/` 配下を正とする。
 
 ```yaml
 ---
+layout: guide
+css: guide
 title: "2026年5月LoH短距離 京都芝1200m攻略"
 description: "..."
 date: 2026-04-29
@@ -205,6 +216,7 @@ modified: 2026-04-29
 tags: [loh, short-distance, kyoto, turf, 2026-05]
 event: loh
 status: published
+permalink: /guides/loh/2026-05-kyoto-1200/
 hero_image:
   src: https://gametora.com/...
   credit_name: "GameTora Support Card DB"
@@ -224,6 +236,9 @@ sources:
 - `tags`: 推奨。タグ一覧とカード表示に使う。
 - `event`: 任意。`loh`、`champion`、`team`、`daily`、`training` など。
 - `status`: 任意。`draft` は一覧やトップから除外する。
+- `layout`: ガイドページでは必須。必ず `guide`。
+- `css`: ガイドページでは必須。必ず `guide`。
+- `permalink`: 必須。公開URLと一致させる。
 - `hero_image` / `hero_cards`: 任意。画像を使う場合は引用元を必ず入れる。
 - `sources`: 推奨。情報源セクションを自動生成する。
 
@@ -244,10 +259,11 @@ sources:
 ### 新規ページ作成手順
 
 ```powershell
-Copy-Item templates/race-guide.html _race/<slug>.html
+New-Item -ItemType Directory -Force -Path guides/<event>/<slug>
+Copy-Item templates/race-guide.html guides/<event>/<slug>/index.html
 ```
 
-その後、front matter の `title`、`description`、`date`、`modified`、`tags`、`sources` を書き換え、本文の標準セクションを埋める。
+その後、front matter の `layout: guide`、`css: guide`、`permalink`、`title`、`description`、`date`、`modified`、`tags`、`sources` を書き換え、本文の標準セクションを埋める。作成後は `powershell -ExecutionPolicy Bypass -File scripts/validate_jekyll_structure.ps1` を通し、公開URLにアクセスしてCSS適用まで確認する。
 
 ### タグ運用
 
@@ -273,7 +289,10 @@ Copy-Item templates/race-guide.html _race/<slug>.html
 
 - `git diff --check`
 - `git status --short`
+- `powershell -ExecutionPolicy Bypass -File scripts/validate_jekyll_structure.ps1`
 - `.codex-local/` が Git 管理対象になっていないこと。
 - 生成HTMLに canonical、OG、favicon、description があること。
+- ガイドページの生成HTMLに `/assets/css/guide.css` が含まれること。
+- ガイドページURLが404ではなく、YAML front matterが本文に表示されていないこと。
 - 外部リンク `target="_blank"` に `rel="noopener noreferrer"` があること。
 - 画像に `alt` と引用元リンクがあること。
