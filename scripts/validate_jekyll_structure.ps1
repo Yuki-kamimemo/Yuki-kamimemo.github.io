@@ -37,6 +37,7 @@ $requiredPaths = @(
   "_includes/head.html",
   "_includes/footer.html",
   "_includes/giscus.html",
+  "_includes/share-links.html",
   "_includes/sources.html",
   "_includes/tags.html",
   "_data/tags.yml",
@@ -63,8 +64,14 @@ Get-ChildItem -Recurse -Include *.html,*.md -File |
 Assert-Contains "_config.yml" "permalink:\s+/guides/race/:path/" "_config.yml must output race guides under /guides/race/:path/"
 Assert-Contains "_config.yml" "future:\s+true" "_config.yml must include future-dated guide documents in collection lists"
 Assert-Contains "_layouts/guide.html" "include\s+giscus.html" "guide layout must include giscus"
+Assert-Contains "_layouts/guide.html" "include\s+share-links.html" "guide layout must include share links"
+Assert-Contains "_layouts/home.html" "include\s+share-links.html" "home layout must include share links"
+Assert-Contains "_layouts/default.html" "include\s+share-links.html" "default layout must include share links"
 Assert-Contains "_layouts/guide.html" "article:published_time" "guide layout must output article published time"
 Assert-Contains "_includes/giscus.html" 'data-mapping="pathname"' "giscus must map discussions by pathname"
+Assert-Contains "_includes/share-links.html" "twitter.com/intent/tweet" "share links must include X sharing"
+Assert-Contains "_includes/share-links.html" "social-plugins.line.me/lineit/share" "share links must include LINE sharing"
+Assert-Contains "_includes/share-links.html" "facebook.com/sharer/sharer.php" "share links must include Facebook sharing"
 Assert-Contains "_includes/sources.html" "page\.sources" "sources include must be driven by page.sources"
 Assert-Contains "index.html" "site\.pages" "home page must read public guide pages under guides/"
 Assert-Contains "index.html" "/guides/loh/2026-05-kyoto-1200/" "home page must keep a fallback link to the existing LoH guide"
@@ -77,6 +84,7 @@ Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "layout:\s+guide" "Lo
 Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "css:\s+guide" "LoH guide page must explicitly load guide.css"
 Assert-Contains "guides/loh/2026-05-kyoto-1200/index.html" "category:\s+race" "LoH guide page must declare category for category list output"
 Assert-Contains "AGENTS.md" "Jekyll Collection" "AGENTS.md must document Jekyll collection operations"
+Assert-Contains "AGENTS.md" "_includes/share-links\.html" "AGENTS.md must document SNS share link operations"
 Assert-Contains "README.md" "_race/" "README.md must summarize the Jekyll collection structure"
 Assert-Contains ".gitignore" "_site/" ".gitignore must ignore Jekyll output"
 Assert-Contains ".gitignore" "\.jekyll-cache/" ".gitignore must ignore Jekyll cache"

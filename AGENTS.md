@@ -22,6 +22,16 @@
 - giscusの基本設定は、現在のガイドページにある `data-repo`、`data-repo-id`、`data-category`、`data-category-id`、`data-theme="preferred_color_scheme"`、`data-lang="ja"` を維持する。
 - giscusのスクリプトは外部読み込みだが、コメント投稿にはGitHubログインとgiscus認可が必要であることを前提にする。
 
+## SNS共有リンク
+
+- 各ページのSNS共有リンクは `_includes/share-links.html` を使う。
+- 共有リンクは `home`、`default`、`guide` layout から自動挿入する。個別ページ本文へ重複して書かない。
+- 共有URLは `page.url | absolute_url`、共有文は `page.title | default: site.title` を使う。
+- 共有先はX、LINE、Facebook、ページURLを基本にする。新しい共有先を足す場合も、フォーム、DB、アクセス解析、Cookie、独自APIは追加しない。
+- 外部共有リンクで `target="_blank"` を使う場合は、必ず `rel="noopener noreferrer"` を付ける。
+- 共有不要ページは front matter に `share: false` を入れる。現在は404ページで使う。
+- 見た目は `assets/css/home.css` と `assets/css/guide.css` の `.share-section`、`.share-links`、`.share-link` に合わせる。
+
 ## 公開サイト要件
 
 各HTMLの `<head>` には以下を入れる。
@@ -253,6 +263,7 @@ sources:
 - `_includes/head.html`: meta、OG、canonical、favicon、CSS。
 - `_includes/footer.html`: ガイド共通フッター。
 - `_includes/giscus.html`: コメント欄。`data-mapping="pathname"` を維持する。
+- `_includes/share-links.html`: SNS共有リンク。`share: false` のページでは非表示にする。
 - `_includes/sources.html`: `page.sources` 駆動の情報源欄。
 - `_includes/tags.html`: タグバッジ列。
 - `_includes/card-summary.html`、`card-style.html`、`card-support.html`、`callout.html`、`badge.html`、`source-card.html`: 本文部品。

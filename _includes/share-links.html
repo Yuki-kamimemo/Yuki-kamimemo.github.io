@@ -1,0 +1,15 @@
+{% unless page.share == false %}
+  {% assign share_url = page.url | absolute_url %}
+  {% assign share_title = page.title | default: site.title %}
+  {% assign encoded_url = share_url | uri_escape %}
+  {% assign encoded_title = share_title | uri_escape %}
+  <section class="section share-section" aria-labelledby="share-heading">
+    <h2 class="section-title" id="share-heading">共有</h2>
+    <div class="share-links" aria-label="SNS共有リンク">
+      <a class="share-link x" href="https://twitter.com/intent/tweet?url={{ encoded_url }}&amp;text={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Xで共有</a>
+      <a class="share-link line" href="https://social-plugins.line.me/lineit/share?url={{ encoded_url }}" target="_blank" rel="noopener noreferrer">LINEで共有</a>
+      <a class="share-link facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ encoded_url }}" target="_blank" rel="noopener noreferrer">Facebookで共有</a>
+      <a class="share-link url" href="{{ share_url }}">ページURL</a>
+    </div>
+  </section>
+{% endunless %}
