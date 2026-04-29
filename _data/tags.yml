@@ -1,0 +1,17 @@
+loh:
+  label: "LoH"
+  description: "リーグ・オブ・ヒーローズ攻略"
+short-distance:
+  label: "短距離"
+kyoto:
+  label: "京都"
+turf:
+  label: "芝"
+2026-05:
+  label: "2026年5月"
+support-card:
+  label: "サポートカード"
+factor:
+  label: "因子周回"
+course:
+  label: "コース攻略"

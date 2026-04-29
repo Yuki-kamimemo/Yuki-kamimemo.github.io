@@ -1,0 +1,18 @@
+{% if page.sources %}
+  <section class="section" id="sources">
+    <h2 class="section-title">情報源リンク</h2>
+    <div class="sources">
+      {% for source in page.sources %}
+        {% if source.key %}
+          {% assign source_data = site.data.sources[source.key] %}
+        {% else %}
+          {% assign source_data = source %}
+        {% endif %}
+        <div class="source-card">
+          <a href="{{ source.url | default: source_data.url }}" target="_blank" rel="noopener noreferrer">{{ source.name | default: source_data.name }}</a>
+          <span>{{ source.note | default: source_data.note }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}

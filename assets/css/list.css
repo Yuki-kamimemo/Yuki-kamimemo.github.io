@@ -1,0 +1,37 @@
+@import url("./home.css");
+
+.tag-index {
+  display: grid;
+  gap: 18px;
+}
+
+.tag-block {
+  display: grid;
+  gap: 12px;
+}
+
+.tag-block h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.tag-block h4 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.tag-block > p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.guide-card .tags {
+  margin-top: 4px;
+}
+
+.guide-card .tag {
+  background: var(--red-soft);
+  border-color: var(--line);
+  color: #8b254b;
+}

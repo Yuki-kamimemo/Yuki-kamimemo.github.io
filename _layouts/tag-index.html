@@ -1,0 +1,41 @@
+---
+layout: default
+css: list
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">タグ一覧</span>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.description }}</p>
+  </div>
+</section>
+
+{% assign all_guides = site.race | concat: site.training | concat: site.support | concat: site.factor | concat: site.course | where_exp: 'item', 'item.status != "draft"' %}
+<section class="section" aria-labelledby="tags-heading">
+  <h2 class="section-title" id="tags-heading">タグ別記事</h2>
+  <div class="tag-index">
+    {% for tag_pair in site.data.tags %}
+      {% assign tag_slug = tag_pair[0] %}
+      {% assign tag = tag_pair[1] %}
+      {% assign tagged_items = all_guides | where_exp: 'item', 'item.tags contains tag_slug' | sort: 'date' | reverse %}
+      <section class="tag-block" aria-labelledby="tag-{{ tag_slug }}">
+        <h3 id="tag-{{ tag_slug }}">{{ tag.label | default: tag_slug }}</h3>
+        {% if tag.description %}<p>{{ tag.description }}</p>{% endif %}
+        <div class="guide-list">
+          {% for item in tagged_items %}
+            <article class="guide-card">
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+              <a class="button" href="{{ item.url | relative_url }}">ページを開く</a>
+            </article>
+          {% else %}
+            <div class="notice">
+              <p>この記事タグの記事はまだありません。</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</section>

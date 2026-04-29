@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'ja' }}">
+<head>
+  {% include head.html %}
+  {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
+  {% if page.modified %}<meta property="article:modified_time" content="{{ page.modified | date_to_xmlschema }}">{% endif %}
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <main class="page" id="top">
+    <div class="page-actions page-actions-top">
+      <a href="{{ '/' | relative_url }}">トップページへ戻る</a>
+    </div>
+
+    <article class="hero" id="main">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">{{ page.eyebrow | default: 'ウマ娘 攻略メモ' }}</span>
+          <h1>{{ page.h1 | default: page.title }}</h1>
+          <p class="lead">{{ page.lead | default: page.description }}</p>
+          {% include tags.html tags=page.tags %}
+        </div>
+        {% if page.hero_cards %}
+          <div class="hero-deck" aria-label="{{ page.hero_cards_label | default: '注目画像' }}">
+            {% for card in page.hero_cards %}
+              <div class="hero-card">
+                <img src="{{ card.src }}" alt="{{ card.alt }}">
+                <span>{{ card.label }}</span>
+                <a class="image-source" href="{{ card.credit_url }}" target="_blank" rel="noopener noreferrer">引用元: {{ card.credit_name }}</a>
+              </div>
+            {% endfor %}
+          </div>
+        {% elsif page.hero_image %}
+          <div class="hero-deck" aria-label="アイキャッチ画像">
+            <div class="hero-card">
+              <img src="{{ page.hero_image.src }}" alt="{{ page.hero_image.alt | default: page.title }}">
+              <span>{{ page.hero_image.label | default: page.title }}</span>
+              <a class="image-source" href="{{ page.hero_image.credit_url }}" target="_blank" rel="noopener noreferrer">引用元: {{ page.hero_image.credit_name }}</a>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </article>
+
+    {{ content }}
+
+    {% include sources.html %}
+    {% include giscus.html %}
+    {% include footer.html %}
+  </main>
+</body>
+</html>

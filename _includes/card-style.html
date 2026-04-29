@@ -1,0 +1,5 @@
+<div class="style-card {{ include.kind | default: 'front' }}">
+  <h3>{{ include.title }}</h3>
+  {% if include.badge %}<span class="badge {{ include.badge_color | default: 'blue' }}">{{ include.badge }}</span>{% endif %}
+  {{ include.content }}
+</div>

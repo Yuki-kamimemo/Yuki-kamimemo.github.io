@@ -1,0 +1,8 @@
+{% if include.tags %}
+  <div class="tags">
+    {% for tag in include.tags %}
+      {% assign tag_data = site.data.tags[tag] %}
+      <span class="tag">{{ tag_data.label | default: tag }}</span>
+    {% endfor %}
+  </div>
+{% endif %}

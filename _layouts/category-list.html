@@ -1,0 +1,31 @@
+---
+layout: default
+css: list
+---
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">カテゴリ</span>
+    <h1>{{ page.title }}</h1>
+    <p class="lead">{{ page.description }}</p>
+  </div>
+</section>
+
+{% assign items = site[page.category] | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
+<section class="section" aria-labelledby="category-guides-heading">
+  <h2 class="section-title" id="category-guides-heading">記事一覧</h2>
+  <div class="guide-list">
+    {% for item in items %}
+      <article class="guide-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        {% include tags.html tags=item.tags %}
+        <a class="button" href="{{ item.url | relative_url }}">ページを開く</a>
+      </article>
+    {% else %}
+      <div class="notice">
+        <p>このカテゴリの記事はまだありません。</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

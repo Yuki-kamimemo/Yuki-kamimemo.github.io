@@ -1,0 +1,11 @@
+<footer>
+  <div class="page-actions page-actions-bottom">
+    <a href="{{ '/' | relative_url }}">トップページへ戻る</a>
+    {% if page.layout == 'guide' %}
+      <a href="#top">ページ上部へ戻る</a>
+    {% endif %}
+  </div>
+  <p>掲載内容は、最新のゲーム内告知と各攻略サイトの更新日もあわせて確認してください。</p>
+  <p>このページは個人が趣味で作成した非公式攻略メモです。Cygames、ウマ娘 プリティーダービー公式、各権利元とは関係ありません。ページ作成にはAIも利用しています。</p>
+  <p>最終更新日: {{ page.modified | default: site.time | date: '%Y-%m-%d' }}</p>
+</footer>

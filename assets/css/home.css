@@ -314,6 +314,13 @@ h1 {
   background: linear-gradient(135deg, var(--red-soft), var(--green-soft));
 }
 
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 0;
+}
+
 .notice p {
   margin: 0;
   color: var(--ink);

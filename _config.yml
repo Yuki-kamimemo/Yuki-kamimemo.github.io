@@ -1,0 +1,50 @@
+title: ウマ娘 レース攻略メモ
+description: 非公式の対戦レース攻略メモ
+url: https://yuki-kamimemo.github.io
+lang: ja
+timezone: Asia/Tokyo
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  race:
+    output: true
+    permalink: /guides/race/:path/
+  training:
+    output: true
+    permalink: /guides/training/:path/
+  support:
+    output: true
+    permalink: /guides/support/:path/
+  factor:
+    output: true
+    permalink: /guides/factor/:path/
+  course:
+    output: true
+    permalink: /guides/course/:path/
+
+defaults:
+  - scope: { type: race }
+    values: { layout: guide, category: race, css: guide }
+  - scope: { type: training }
+    values: { layout: guide, category: training, css: guide }
+  - scope: { type: support }
+    values: { layout: guide, category: support, css: guide }
+  - scope: { type: factor }
+    values: { layout: guide, category: factor, css: guide }
+  - scope: { type: course }
+    values: { layout: guide, category: course, css: guide }
+
+exclude:
+  - templates/
+  - docs/
+  - AGENTS.md
+  - README.md
+  - .codex-local/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - scripts/

@@ -1,0 +1,8 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if page.robots %}<meta name="robots" content="{{ page.robots }}">{% endif %}
+<meta name="theme-color" content="{{ page.theme_color | default: '#e94b77' }}">
+{% seo %}
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+{% assign css_name = page.css | default: layout.css | default: 'home' %}
+<link rel="stylesheet" href="{{ '/assets/css/' | append: css_name | append: '.css' | relative_url }}">
