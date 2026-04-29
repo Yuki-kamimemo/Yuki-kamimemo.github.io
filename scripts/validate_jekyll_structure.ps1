@@ -55,6 +55,7 @@ Assert-Contains "_includes/giscus.html" 'data-mapping="pathname"' "giscus must m
 Assert-Contains "_includes/sources.html" "page\.sources" "sources include must be driven by page.sources"
 Assert-Contains "index.html" "site\.race" "home page must read collection articles"
 Assert-Contains "_race/2026-05-kyoto-1200.html" "sources:" "migrated race guide must declare sources front matter"
+Assert-Contains "_race/2026-05-kyoto-1200.html" "permalink:\s+/guides/loh/2026-05-kyoto-1200/" "May 2026 LoH guide must keep its original public URL"
 Assert-Contains "AGENTS.md" "Jekyll Collection" "AGENTS.md must document Jekyll collection operations"
 Assert-Contains "README.md" "_race/" "README.md must summarize the Jekyll collection structure"
 Assert-Contains ".gitignore" "_site/" ".gitignore must ignore Jekyll output"
