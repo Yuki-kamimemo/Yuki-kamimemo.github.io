@@ -327,26 +327,127 @@ h1 {
 }
 
 .share-section {
-  background: var(--paper-strong);
+  background: linear-gradient(135deg, #fff, var(--red-soft));
 }
 
-.share-links {
+.share-summary {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
 }
 
-.share-link {
+.share-summary p {
+  margin: -8px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.share-open-button,
+.share-copy-button,
+.share-close-button {
+  border: 0;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.share-open-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 7px 14px;
-  border: 1px solid var(--line);
+  min-height: 44px;
+  padding: 8px 18px;
   border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--orange));
+  box-shadow: 0 12px 24px rgba(233, 75, 119, 0.22);
+}
+
+.share-open-button:hover {
+  transform: translateY(-1px);
+}
+
+.share-dialog {
+  width: min(520px, calc(100vw - 28px));
+  padding: 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+}
+
+.share-dialog::backdrop {
+  background: rgba(39, 27, 46, 0.46);
+  backdrop-filter: blur(4px);
+}
+
+.share-dialog-panel {
+  padding: 22px;
+  border: 1px solid rgba(240, 217, 218, 0.94);
+  border-radius: 18px;
+  background: var(--paper-strong);
+  box-shadow: 0 26px 70px rgba(39, 27, 46, 0.24);
+}
+
+.share-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.share-dialog-head h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.35;
+}
+
+.share-close-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: var(--ink);
+  background: var(--gray-soft);
+}
+
+.share-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.share-link {
+  display: grid;
+  gap: 8px;
+  place-items: center;
+  min-height: 112px;
+  padding: 12px 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
   background: #fff;
   color: var(--ink);
-  box-shadow: 0 8px 18px rgba(102, 34, 58, 0.08);
+  box-shadow: 0 10px 22px rgba(102, 34, 58, 0.08);
+}
+
+.share-link span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 1000;
+}
+
+.share-link strong {
+  font-size: 13px;
+  line-height: 1.25;
 }
 
 .share-link:hover {
@@ -355,22 +456,65 @@ h1 {
 }
 
 .share-link.x {
-  border-color: #24292f;
+  border-color: #24292f33;
+}
+
+.share-link.x span {
+  background: #111;
 }
 
 .share-link.line {
-  border-color: #19a871;
-  color: #0c7a50;
+  border-color: #19a87155;
+}
+
+.share-link.line span {
+  background: #19a871;
 }
 
 .share-link.facebook {
-  border-color: #3479d7;
-  color: #245fae;
+  border-color: #3479d755;
 }
 
-.share-link.url {
-  border-color: #f0b35d;
-  color: #9a5b12;
+.share-link.facebook span {
+  background: #3479d7;
+  font-family: Arial, sans-serif;
+}
+
+.share-copy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--gray-soft);
+}
+
+.share-url {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 800;
+}
+
+.share-copy-button {
+  min-height: 40px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--blue);
+}
+
+.share-copy-status {
+  min-height: 24px;
+  margin: 8px 0 0;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 @media (max-width: 760px) {
@@ -389,12 +533,22 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .share-links {
-    display: grid;
+  .share-summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .share-open-button {
+    width: 100%;
+  }
+
+  .share-links,
+  .share-copy {
     grid-template-columns: 1fr;
   }
 
-  .share-link {
+  .share-link,
+  .share-copy-button {
     width: 100%;
   }
 }

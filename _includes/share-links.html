@@ -4,12 +4,87 @@
   {% assign encoded_url = share_url | uri_escape %}
   {% assign encoded_title = share_title | uri_escape %}
   <section class="section share-section" aria-labelledby="share-heading">
-    <h2 class="section-title" id="share-heading">共有</h2>
-    <div class="share-links" aria-label="SNS共有リンク">
-      <a class="share-link x" href="https://twitter.com/intent/tweet?url={{ encoded_url }}&amp;text={{ encoded_title }}" target="_blank" rel="noopener noreferrer">Xで共有</a>
-      <a class="share-link line" href="https://social-plugins.line.me/lineit/share?url={{ encoded_url }}" target="_blank" rel="noopener noreferrer">LINEで共有</a>
-      <a class="share-link facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ encoded_url }}" target="_blank" rel="noopener noreferrer">Facebookで共有</a>
-      <a class="share-link url" href="{{ share_url }}">ページURL</a>
+    <div class="share-summary">
+      <div>
+        <h2 class="section-title" id="share-heading">共有</h2>
+        <p>攻略メモをSNSやURLコピーで共有できます。</p>
+      </div>
+      <button class="share-open-button" type="button" data-share-open aria-haspopup="dialog" aria-controls="share-dialog">
+        共有する
+      </button>
     </div>
+    <dialog class="share-dialog" id="share-dialog" aria-labelledby="share-dialog-title">
+      <div class="share-dialog-panel">
+        <div class="share-dialog-head">
+          <h3 id="share-dialog-title">このページを共有</h3>
+          <button class="share-close-button" type="button" data-share-close aria-label="共有画面を閉じる">×</button>
+        </div>
+        <div class="share-links" aria-label="SNS共有リンク">
+          <a class="share-link x" href="https://twitter.com/intent/tweet?url={{ encoded_url }}&amp;text={{ encoded_title }}" target="_blank" rel="noopener noreferrer"><span>X</span><strong>X</strong></a>
+          <a class="share-link line" href="https://social-plugins.line.me/lineit/share?url={{ encoded_url }}" target="_blank" rel="noopener noreferrer"><span>LINE</span><strong>LINE</strong></a>
+          <a class="share-link facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ encoded_url }}" target="_blank" rel="noopener noreferrer"><span>f</span><strong>Facebook</strong></a>
+        </div>
+        <div class="share-copy" aria-label="ページURLコピー">
+          <input class="share-url" type="text" value="{{ share_url }}" readonly aria-label="共有URL">
+          <button class="share-copy-button" type="button" data-share-copy data-share-url="{{ share_url }}">コピー</button>
+        </div>
+        <p class="share-copy-status" data-share-status role="status" aria-live="polite"></p>
+      </div>
+    </dialog>
+  <script>
+    (() => {
+      const section = document.currentScript.closest(".share-section") || document.currentScript.previousElementSibling;
+      if (!section || section.dataset.shareReady) return;
+      section.dataset.shareReady = "true";
+
+      const dialog = section.querySelector(".share-dialog");
+      const openButton = section.querySelector("[data-share-open]");
+      const closeButton = section.querySelector("[data-share-close]");
+      const copyButton = section.querySelector("[data-share-copy]");
+      const urlInput = section.querySelector(".share-url");
+      const status = section.querySelector("[data-share-status]");
+
+      const closeDialog = () => {
+        if (dialog.open && typeof dialog.close === "function") {
+          dialog.close();
+        } else {
+          dialog.removeAttribute("open");
+        }
+      };
+
+      openButton?.addEventListener("click", () => {
+        if (typeof dialog.showModal === "function") {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute("open", "");
+        }
+        status.textContent = "";
+        copyButton.textContent = "コピー";
+        urlInput.select();
+      });
+
+      closeButton?.addEventListener("click", closeDialog);
+
+      dialog?.addEventListener("click", (event) => {
+        if (event.target === dialog) closeDialog();
+      });
+
+      copyButton?.addEventListener("click", async () => {
+        const shareUrl = copyButton.dataset.shareCopy || copyButton.dataset.shareUrl || urlInput.value;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(shareUrl);
+          } else {
+            urlInput.select();
+            document.execCommand("copy");
+          }
+          status.textContent = "URLをコピーしました。";
+          copyButton.textContent = "コピー済み";
+        } catch (error) {
+          status.textContent = "コピーできませんでした。URL欄からコピーしてください。";
+        }
+      });
+    })();
+  </script>
   </section>
 {% endunless %}
