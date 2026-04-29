@@ -49,6 +49,7 @@ foreach ($path in $requiredPaths) {
 }
 
 Assert-Contains "_config.yml" "permalink:\s+/guides/race/:path/" "_config.yml must output race guides under /guides/race/:path/"
+Assert-Contains "_config.yml" "future:\s+true" "_config.yml must include future-dated guide documents in collection lists"
 Assert-Contains "_layouts/guide.html" "include\s+giscus.html" "guide layout must include giscus"
 Assert-Contains "_layouts/guide.html" "article:published_time" "guide layout must output article published time"
 Assert-Contains "_includes/giscus.html" 'data-mapping="pathname"' "giscus must map discussions by pathname"

@@ -3,6 +3,7 @@ description: 非公式の対戦レース攻略メモ
 url: https://yuki-kamimemo.github.io
 lang: ja
 timezone: Asia/Tokyo
+future: true
 
 plugins:
   - jekyll-feed
