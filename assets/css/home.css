@@ -47,6 +47,28 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible {
+  outline: 3px solid #1f6feb;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+  z-index: 20;
+  transform: translateY(-140%);
+  padding: 8px 12px;
+  background: #fff;
+  border: 2px solid #1f6feb;
+  border-radius: 10px;
+  color: #12376f;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .page {
   max-width: 1180px;
   margin: 0 auto;
@@ -145,6 +167,19 @@ h1 {
   font-weight: 800;
 }
 
+.image-credit {
+  margin: 16px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.image-credit a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .section {
   margin-top: 26px;
   background: rgba(255, 250, 247, 0.94);
@@ -232,7 +267,25 @@ h1 {
   box-shadow: 0 10px 20px rgba(233, 75, 119, 0.22);
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 40px;
+  padding: 7px 14px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--red), var(--orange));
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(233, 75, 119, 0.22);
+}
+
 .guide-card .button:hover {
+  text-decoration: none;
+  background: linear-gradient(135deg, #d63e68, #dd7628);
+}
+
+.button:hover {
   text-decoration: none;
   background: linear-gradient(135deg, #d63e68, #dd7628);
 }
