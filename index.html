@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2026年5月LoH短距離 京都芝1200m 攻略サンプル</title>
+  <title>ウマ娘 攻略メモ置き場</title>
   <style>
     :root {
       --bg: #f7f1e8;
@@ -86,10 +86,7 @@
     .hero-inner {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 28px;
-      align-items: center;
+      max-width: 820px;
     }
 
     .eyebrow {
@@ -113,104 +110,37 @@
     }
 
     .lead {
-      max-width: 780px;
-      margin: 0 0 24px;
+      max-width: 760px;
+      margin: 0;
       color: rgba(255, 255, 255, 0.9);
       font-size: 17px;
     }
 
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 22px 0 0;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 32px;
-      padding: 5px 11px;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .hero-deck {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      align-items: end;
-    }
-
-    .hero-card {
-      position: relative;
-      min-height: 230px;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.24);
-      transform: rotate(-3deg);
-    }
-
-    .hero-card:nth-child(2) {
-      transform: translateY(26px) rotate(4deg);
-    }
-
-    .hero-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 230px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-card span {
-      position: absolute;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      background: rgba(20, 24, 34, 0.76);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 900;
-      text-align: center;
-    }
-
     .section {
-      margin-top: 24px;
-      background: var(--paper);
+      margin-top: 26px;
+      background: rgba(255, 250, 242, 0.92);
       border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: 0 12px 34px rgba(81, 54, 20, 0.07);
+      border-radius: 22px;
       padding: 26px;
+      box-shadow: 0 12px 34px rgba(81, 54, 20, 0.08);
     }
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       margin: 0 0 18px;
-      font-size: 26px;
-      line-height: 1.3;
+      font-size: 25px;
+      line-height: 1.35;
     }
 
     .section-title::before {
       content: "";
-      display: block;
-      width: 8px;
-      height: 34px;
-      border-radius: 8px;
+      width: 10px;
+      height: 32px;
+      border-radius: 999px;
       background: var(--blue);
-    }
-
-    .section-title.red::before {
-      background: var(--red);
+      flex: 0 0 auto;
     }
 
     .section-title.green::before {
@@ -221,1172 +151,191 @@
       background: var(--orange);
     }
 
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .summary-card,
-    .style-card,
-    .source-card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      background: var(--paper-strong);
-    }
-
-    .summary-card strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 18px;
-    }
-
-    .summary-card.critical {
-      background: var(--red-soft);
-      border-color: #ffd0d7;
-    }
-
-    .summary-card.high {
-      background: var(--orange-soft);
-      border-color: #ffdfb8;
-    }
-
-    .summary-card.factor {
-      background: var(--green-soft);
-      border-color: #c8ebdc;
-    }
-
-    .callout {
-      margin: 16px 0;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid;
-      font-weight: 700;
-    }
-
-    .callout.red {
-      color: #8d1728;
-      background: var(--red-soft);
-      border-color: #ffc8d1;
-    }
-
-    .callout.green {
-      color: #0d6040;
-      background: var(--green-soft);
-      border-color: #bbe8d7;
-    }
-
-    .callout.gray {
-      color: #485568;
-      background: var(--gray-soft);
-      border-color: var(--line);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: var(--paper-strong);
-    }
-
-    th,
-    td {
-      padding: 12px 14px;
-      border-bottom: 1px solid var(--line);
-      text-align: left;
-      vertical-align: top;
-    }
-
-    th {
-      background: #f1e8da;
-      color: #22314a;
-      font-size: 14px;
-    }
-
-    tr:last-child td {
-      border-bottom: 0;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      min-height: 25px;
-      padding: 2px 9px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .badge.red {
-      background: var(--red-soft);
-      color: var(--red);
-    }
-
-    .badge.orange {
-      background: var(--orange-soft);
-      color: var(--orange);
-    }
-
-    .badge.blue {
-      background: var(--blue-soft);
-      color: var(--blue);
-    }
-
-    .badge.green {
-      background: var(--green-soft);
-      color: var(--green);
-    }
-
-    .style-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .style-card {
-      border-top: 5px solid var(--blue);
-      box-shadow: 0 10px 28px rgba(81, 54, 20, 0.06);
-    }
-
-    .style-card.escape {
-      border-top-color: var(--red);
-    }
-
-    .style-card.front {
-      border-top-color: var(--orange);
-    }
-
-    .style-card.late {
-      border-top-color: var(--violet);
-    }
-
-    .style-card h3 {
-      margin: 0 0 8px;
-      font-size: 21px;
-    }
-
-    .style-card ul,
-    .checklist {
-      padding-left: 18px;
-      margin: 10px 0 0;
-    }
-
-    .style-card li,
-    .checklist li {
-      margin: 5px 0;
-    }
-
-    .two-column {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    .mini-source {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .sources {
+    .guide-list,
+    .link-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .support-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .support-card {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px;
+    .guide-card,
+    .link-card,
+    .notice {
       background: var(--paper-strong);
-      border-top: 5px solid var(--blue);
-      box-shadow: 0 12px 28px rgba(81, 54, 20, 0.08);
-      overflow: hidden;
-    }
-
-    .support-card.core {
-      border-top-color: var(--red);
-      background: var(--red-soft);
-    }
-
-    .support-card.factor {
-      border-top-color: var(--green);
-      background: var(--green-soft);
-    }
-
-    .support-card.latest {
-      border-top-color: var(--violet);
-      background: var(--violet-soft);
-    }
-
-    .support-card h3 {
-      margin: 12px 0 8px;
-      font-size: 20px;
-      line-height: 1.35;
-    }
-
-    .support-card p {
-      margin: 8px 0 0;
-    }
-
-    .support-media {
-      display: block;
-      margin: -16px -16px 0;
-      height: 180px;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(244, 239, 231, 0.55));
-    }
-
-    .support-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 23%;
-      display: block;
-      border: 0;
-      box-shadow: none;
-      background: transparent;
-    }
-
-    .support-body {
-      padding-top: 2px;
-    }
-
-    .support-points {
-      display: grid;
-      gap: 7px;
-      padding: 0;
-      margin: 12px 0 0;
-      list-style: none;
-    }
-
-    .support-points li {
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.64);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .card-gallery {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      margin: 18px 0;
-    }
-
-    .card-tile {
-      position: relative;
-      min-height: 290px;
-      overflow: hidden;
-      border-radius: 18px;
       border: 1px solid var(--line);
-      background: #1d2535;
-      box-shadow: 0 18px 40px rgba(42, 28, 12, 0.16);
+      border-radius: 16px;
+      padding: 18px;
     }
 
-    .card-tile img {
-      width: 100%;
-      height: 100%;
-      min-height: 290px;
-      object-fit: cover;
-      display: block;
-      transition: transform 180ms ease;
-    }
-
-    .card-tile:hover img {
-      transform: scale(1.04);
-    }
-
-    .card-tile figcaption {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 28px 13px 13px;
-      color: #fff;
-      font-weight: 900;
-      background: linear-gradient(180deg, transparent, rgba(13, 18, 28, 0.88));
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-    }
-
-    .blog-nav {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      display: flex;
-      flex-wrap: wrap;
+    .guide-card {
+      display: grid;
       gap: 10px;
-      margin: 18px 0 0;
-      padding: 12px;
-      border: 1px solid rgba(234, 223, 206, 0.9);
-      border-radius: 18px;
-      background: rgba(255, 250, 242, 0.84);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 12px 30px rgba(81, 54, 20, 0.08);
+      border-left: 6px solid var(--red);
     }
 
-    .blog-nav a {
-      min-height: 34px;
+    .guide-card h3,
+    .link-card h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .guide-card p,
+    .link-card p,
+    .notice p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .guide-card .button {
       display: inline-flex;
       align-items: center;
-      padding: 5px 12px;
+      justify-content: center;
+      width: fit-content;
+      min-height: 40px;
+      padding: 7px 14px;
+      color: #fff;
+      background: var(--red);
       border-radius: 999px;
-      background: #fff;
-      color: #293448;
-      border: 1px solid var(--line);
-      font-size: 13px;
+      box-shadow: 0 10px 20px rgba(215, 68, 68, 0.18);
     }
 
-    .stat-grid {
+    .guide-card .button:hover {
+      text-decoration: none;
+      background: #be3535;
+    }
+
+    .link-card {
+      min-height: 118px;
+    }
+
+    .link-card.official {
+      border-top: 5px solid var(--green);
+    }
+
+    .link-card.strategy {
+      border-top: 5px solid var(--blue);
+    }
+
+    .notice {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 12px;
-      margin: 18px 0;
+      background: linear-gradient(135deg, var(--blue-soft), var(--green-soft));
     }
 
-    .stat-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-      padding: 16px 14px;
-      border: 1px solid var(--line);
-      background: #fff;
-      box-shadow: 0 12px 28px rgba(81, 54, 20, 0.07);
+    .notice p {
+      margin: 0;
+      color: var(--ink);
     }
 
-    .stat-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 6px;
-      background: var(--blue);
-    }
+    @media (max-width: 760px) {
+      .page {
+        padding: 18px 12px 48px;
+      }
 
-    .stat-card.speed::before {
-      background: #2d6ccf;
-    }
-
-    .stat-card.stamina::before {
-      background: #d98228;
-    }
-
-    .stat-card.power::before {
-      background: #d74444;
-    }
-
-    .stat-card.guts::before {
-      background: #16845a;
-    }
-
-    .stat-card.wisdom::before {
-      background: #7a4dcc;
-    }
-
-    .stat-label {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .stat-value {
-      display: block;
-      margin-top: 4px;
-      font-size: clamp(26px, 4vw, 36px);
-      line-height: 1;
-      font-weight: 1000;
-      letter-spacing: 0;
-    }
-
-    .stat-note {
-      display: block;
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .skill-priority {
-      display: grid;
-      gap: 14px;
-      margin: 18px 0;
-    }
-
-    .skill-row {
-      display: grid;
-      grid-template-columns: 116px minmax(0, 1fr);
-      gap: 14px;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: #fff;
-      box-shadow: 0 10px 24px rgba(81, 54, 20, 0.06);
-    }
-
-    .skill-rank {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-start;
-      font-weight: 1000;
-    }
-
-    .skill-rank strong {
-      font-size: 26px;
-      line-height: 1;
-    }
-
-    .skill-row h3 {
-      margin: 0 0 8px;
-      font-size: 19px;
-      line-height: 1.35;
-    }
-
-    .skill-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 9px 0;
-    }
-
-    .skill-row p {
-      margin: 7px 0 0;
-    }
-
-    .skill-source {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .source-card {
-      background: #fbfcff;
-    }
-
-    .source-card span {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    footer {
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    @media (max-width: 860px) {
       .hero,
       .section {
-        padding: 22px;
+        border-radius: 16px;
+        padding: 20px;
       }
 
-      .summary-grid,
-      .style-grid,
-      .support-grid,
-      .card-gallery,
-      .two-column,
-      .sources {
+      .guide-list,
+      .link-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-deck {
-        max-width: 360px;
-      }
-
-      .stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .skill-row {
-        grid-template-columns: 1fr;
-      }
-
-      table,
-      thead,
-      tbody,
-      th,
-      td,
-      tr {
-        display: block;
-      }
-
-      thead {
-        display: none;
-      }
-
-      tr {
-        border-bottom: 1px solid var(--line);
-      }
-
-      td {
-        border-bottom: 0;
-        padding: 9px 12px;
-      }
-
-      td::before {
-        content: attr(data-label);
-        display: block;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 800;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <article class="hero">
+    <section class="hero">
       <div class="hero-inner">
-        <div>
-          <span class="eyebrow">ウマ娘 LoH攻略ブログ</span>
-          <h1>2026年5月LoH短距離<br>京都芝1200m完全攻略</h1>
-          <p class="lead">
-            ぱかライブ最新サポカとWeb攻略情報を合わせて整理。終盤最速級の加速、序盤から中盤の位置取り、因子周回用サポカまで一気に確認できます。
-          </p>
-          <div class="tags">
-            <span class="tag">京都芝1200m</span>
-            <span class="tag">右・内</span>
-            <span class="tag">春</span>
-            <span class="tag">天候/バ場ランダム</span>
-            <span class="tag">逃げ2＋先行1推奨</span>
-          </div>
-        </div>
-        <div class="hero-deck" aria-label="注目サポートカード">
-          <div class="hero-card">
-            <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30296.png" alt="SSRアストンマーチャン サポートカード画像">
-            <span>短距離前方スキル</span>
-          </div>
-          <div class="hero-card">
-            <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30166.png" alt="SSRタップダンスシチー サポートカード画像">
-            <span>最新コンセ枠</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <nav class="blog-nav" aria-label="ページ内ナビゲーション">
-      <a href="#summary">結論</a>
-      <a href="#course">コース</a>
-      <a href="#styles">脚質</a>
-      <a href="#supports">サポカ</a>
-      <a href="#factors">因子</a>
-      <a href="#rotation">ローテ</a>
-      <a href="#sources">情報源</a>
-    </nav>
-
-    <section class="section" id="summary">
-      <h2 class="section-title red">まず結論</h2>
-      <div class="summary-grid">
-        <div class="summary-card critical">
-          <strong>最重要</strong>
-          短距離S、終盤加速、コンセントレーション。前脚質は出遅れがかなり重く、序盤の位置取りがそのまま終盤条件に響きます。
-        </div>
-        <div class="summary-card high">
-          <strong>おすすめ編成</strong>
-          上位狙いは逃げ2＋先行1。プラチナ4狙いなら逃げ1＋先行2も現実的。差し追込は安定度が低めです。
-        </div>
-        <div class="summary-card factor">
-          <strong>因子方針</strong>
-          Dreamsで親・祖父母のG1ローテを揃え、短距離赤因子と有効加速の白因子を優先します。
-        </div>
+        <span class="eyebrow">ウマ娘 攻略メモ</span>
+        <h1>攻略情報への入口</h1>
+        <p class="lead">
+          LoHや育成で確認したい情報を、あとから見返しやすい形でまとめていくためのトップページです。
+        </p>
       </div>
     </section>
 
-    <section class="section" id="course">
-      <h2 class="section-title">コース条件と重要ポイント</h2>
-      <div class="two-column">
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>項目</th>
-                <th>内容</th>
-                <th>攻略上の意味</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="項目">レース条件</td>
-                <td data-label="内容">京都 芝1200m 右・内 春</td>
-                <td data-label="攻略上の意味">右回り、春ウマ娘、根幹距離、京都レース場が有効</td>
-              </tr>
-              <tr>
-                <td data-label="項目">終盤開始</td>
-                <td data-label="内容">800m地点</td>
-                <td data-label="攻略上の意味">最終コーナー内で加速が始まるため、つぼみ系の価値が高い</td>
-              </tr>
-              <tr>
-                <td data-label="項目">最終直線</td>
-                <td data-label="内容">872m〜1200m</td>
-                <td data-label="攻略上の意味">残り200m速度固有は加速後に出やすく有効</td>
-              </tr>
-              <tr>
-                <td data-label="項目">上り坂</td>
-                <td data-label="内容">序盤〜中盤付近</td>
-                <td data-label="攻略上の意味">先行の余勢を駆って、差しの十万バリキなどが位置取りに貢献</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="mini-source">
-            根拠：<a href="https://kamigame.jp/umamusume/page/414884391345499755.html">神ゲー攻略 コース解説</a>、
-            <a href="https://umamusumelabo.com/event/loh/loh-kyoto1200-202605">ウマ娘ラボ 京都1200m解説</a>
-          </p>
-        </div>
-        <div class="callout red">
-          終盤開始地点で加速できるかが最大の分岐点です。終盤加速を積まずに速度スキルだけを盛ると、ラスト200mで届かない展開が増えます。
-        </div>
+    <section class="section" aria-labelledby="guides-heading">
+      <h2 class="section-title" id="guides-heading">攻略ページ</h2>
+      <div class="guide-list">
+        <article class="guide-card">
+          <h3>2026年5月LoH短距離 京都芝1200m攻略</h3>
+          <p>今回作成したLoH向けの攻略メモです。コース条件、脚質、サポカ、因子周回などをまとめています。</p>
+          <a class="button" href="./guides/loh/2026-05-kyoto-1200/">ページを開く</a>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="styles">
-      <h2 class="section-title orange">脚質別攻略</h2>
-      <div class="style-grid">
-        <div class="style-card escape">
-          <h3>逃げ</h3>
-          <span class="badge red">上位狙い向け</span>
-          <ul>
-            <li>逃げ2以上なら追い比べを意識</li>
-            <li>単逃げならアンスキ優先</li>
-            <li>譲れぬ一歩、押せ押せムードを厚くする</li>
-          </ul>
-        </div>
-        <div class="style-card front">
-          <h3>先行</h3>
-          <span class="badge orange">最も扱いやすい</span>
-          <ul>
-            <li>つぼみ、ほころぶ時が軸</li>
-            <li>火花散らして、真っ向勝負を優先</li>
-            <li>中盤速度で3〜5位を確保</li>
-          </ul>
-        </div>
-        <div class="style-card late">
-          <h3>差し</h3>
-          <span class="badge blue">上振れ枠</span>
-          <ul>
-            <li>ニシノ固有を前に出た保険にする</li>
-            <li>差し切り体勢、ターニングポイント</li>
-            <li>順位条件が不安定なのでLoHでは注意</li>
-          </ul>
-        </div>
-        <div class="style-card late">
-          <h3>追込</h3>
-          <span class="badge blue">趣味寄り</span>
-          <ul>
-            <li>ヒートアップ、切れ味、一足飛び</li>
-            <li>バンブー固有は候補</li>
-            <li>スコア安定目的では優先度低め</li>
-          </ul>
-        </div>
+    <section class="section" aria-labelledby="official-heading">
+      <h2 class="section-title green" id="official-heading">公式リンク</h2>
+      <div class="link-grid">
+        <article class="link-card official">
+          <h3><a href="https://umamusume.jp">ウマ娘 公式サイト</a></h3>
+          <p>ゲームやイベントなどの公式情報はこちら。</p>
+        </article>
+        <article class="link-card official">
+          <h3><a href="https://youtube.com/@umamusume_official?si=wsQeqtLiAo4G1o_9">ぱかチューブっ！【ウマ娘公式】</a></h3>
+          <p>YouTubeの公式チャンネルです。</p>
+        </article>
+        <article class="link-card official">
+          <h3><a href="https://x.com/uma_musu?s=20">ウマ娘 公式X</a></h3>
+          <p>最新のお知らせを確認できます。</p>
+        </article>
+        <article class="link-card official">
+          <h3><a href="https://pakatube.umamusume.jp">ぱかチューブっ！公式サイト</a></h3>
+          <p>ぱかチューブっ！関連情報の公式サイトです。</p>
+        </article>
+        <article class="link-card official">
+          <h3><a href="https://x.com/pakatube">ぱかチューブっ！公式X</a></h3>
+          <p>ぱかチューブっ！のお知らせはこちら。</p>
+        </article>
+        <article class="link-card official">
+          <h3><a href="https://webstore.cygames.com/umamusume/">サイゲームスWebストア</a></h3>
+          <p>公式Webストアのウマ娘ページです。</p>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="supports">
-      <h2 class="section-title red">サポートカード情報</h2>
-      <div class="callout red">
-        ぱかライブTV’ #2の最新情報では、新SSRサポカとしてアグネスデジタル（パワー）とタップダンスシチー（スピード）、イベント配布SSRとしてアグネスタキオン（根性）が発表されています。5月LoH短距離では、最新カードをそのまま全部入れるより「Dreams必須枠」「短距離/脚質スキル枠」「因子周回枠」に分けて考えるのが安全です。
-      </div>
-
-      <div class="card-gallery" aria-label="注目サポートカード画像">
-        <figure class="card-tile">
-          <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30296.png" alt="SSRアストンマーチャン サポートカード画像">
-          <figcaption>SSRアストンマーチャン<br><span class="badge red">LoH最重要級</span></figcaption>
-        </figure>
-        <figure class="card-tile">
-          <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30166.png" alt="SSRタップダンスシチー サポートカード画像">
-          <figcaption>SSRタップダンスシチー<br><span class="badge blue">ぱかライブ最新</span></figcaption>
-        </figure>
-        <figure class="card-tile">
-          <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30085.png" alt="SSRアグネスデジタル サポートカード画像">
-          <figcaption>SSRアグネスデジタル<br><span class="badge blue">差し向け最新</span></figcaption>
-        </figure>
-        <figure class="card-tile">
-          <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30289.png" alt="SSRフォーエバーヤング サポートカード画像">
-          <figcaption>SSRフォーエバーヤング<br><span class="badge orange">本育成軸</span></figcaption>
-        </figure>
-      </div>
-
-      <div class="support-grid">
-        <div class="support-card core">
-          <div class="support-media">
-            <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30290.png" alt="SSRカジノドライヴ サポートカード画像">
-          </div>
-          <div class="support-body">
-            <h3>本育成の土台</h3>
-            <span class="badge red">最優先</span>
-            <p><strong>SSRカジノドライヴ</strong>はDreamsのシナリオリンク枠。無凸でも採用候補で、レンタル枠を他の完凸サポカに回しやすいのが強みです。</p>
-            <ul class="support-points">
-              <li>シナリオ進行を安定させる軸</li>
-              <li>フォーエバーヤングは賢さ枠の軸候補</li>
-              <li>快速、地固め、勝負を懸けてを意識</li>
-            </ul>
-          </div>
-        </div>
-        <div class="support-card">
-          <div class="support-media">
-            <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30296.png" alt="SSRアストンマーチャン サポートカード画像">
-          </div>
-          <div class="support-body">
-            <h3>逃げ/先行の実用枠</h3>
-            <span class="badge orange">脚質別</span>
-            <p><strong>根性SSRアストンマーチャン</strong>は短距離前方スキルが優秀。バレマーチャン育成では使えないため、因子化価値も高いです。</p>
-            <ul class="support-points">
-              <li>押せ押せムード、火花散らしてを狙う</li>
-              <li>押しの一手で終盤始め加速を補強</li>
-              <li>テイオーSSRは先行の真っ向勝負枠</li>
-            </ul>
-          </div>
-        </div>
-        <div class="support-card latest">
-          <div class="support-media">
-            <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30166.png" alt="SSRタップダンスシチー サポートカード画像">
-          </div>
-          <div class="support-body">
-            <h3>ぱかライブ最新カード</h3>
-            <span class="badge blue">最新情報</span>
-            <p><strong>SSRタップダンスシチー</strong>はコンセントレーションを取れる点がLoH前脚質と噛み合います。短距離LoHではコンセ目的の評価です。</p>
-            <ul class="support-points">
-              <li>アグネスデジタルは差し育成・因子向け</li>
-              <li>配布タキオンは先行補助として検討</li>
-              <li>最新カードは用途を絞って採用</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <h3>本育成向けサポカ編成の考え方</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>枠</th>
-            <th>候補</th>
-            <th>目的</th>
-            <th>注意点</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="枠"><span class="badge red">シナリオ</span></td>
-            <td data-label="候補">SSRカジノドライヴ</td>
-            <td data-label="目的">DreamsのDP・作戦会議周りを安定させる</td>
-            <td data-label="注意点">未所持なら自前無凸やフレンドを早めに確保</td>
-          </tr>
-          <tr>
-            <td data-label="枠"><span class="badge orange">賢さ</span></td>
-            <td data-label="候補">SSRフォーエバーヤング</td>
-            <td data-label="目的">賢さ確保、地固め/快速などの補助</td>
-            <td data-label="注意点">本育成で使うなら、因子周回側でヒントを補うと安定</td>
-          </tr>
-          <tr>
-            <td data-label="枠"><span class="badge orange">前方加速</span></td>
-            <td data-label="候補">根性SSRアストンマーチャン、スピードSSRトウカイテイオー</td>
-            <td data-label="目的">逃げ/先行の終盤始め加速と短距離スキルを確保</td>
-            <td data-label="注意点">育成キャラと同名サポカは使えないため因子化で補う</td>
-          </tr>
-          <tr>
-            <td data-label="枠"><span class="badge blue">最新枠</span></td>
-            <td data-label="候補">SSRタップダンスシチー</td>
-            <td data-label="目的">コンセントレーション確保、スピード枠補強</td>
-            <td data-label="注意点">短距離LoHでは中距離逃げ向け新スキルよりコンセ目的</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>因子周回で優先したいサポカ</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>サポカ</th>
-            <th>主な狙い</th>
-            <th>向いている脚質</th>
-            <th>評価</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="サポカ">SSRアストンマーチャン（根性）</td>
-            <td data-label="主な狙い">押せ押せムード、猛プッシュ、火花散らして、押しの一手</td>
-            <td data-label="向いている脚質">逃げ/先行</td>
-            <td data-label="評価"><span class="badge red">最重要級</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SSRカルストンライトオ（スピード）</td>
-            <td data-label="主な狙い">無二、無三など短距離逃げ向けスキル</td>
-            <td data-label="向いている脚質">逃げ</td>
-            <td data-label="評価"><span class="badge orange">高優先</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SSRファインモーション（パワー）</td>
-            <td data-label="主な狙い">レースの真髄・体、陽の加護、先行スキル</td>
-            <td data-label="向いている脚質">先行</td>
-            <td data-label="評価"><span class="badge orange">高優先</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SSRゼンノロブロイ（スピード）</td>
-            <td data-label="主な狙い">右回り○、巧みなステップ</td>
-            <td data-label="向いている脚質">先行/汎用</td>
-            <td data-label="評価"><span class="badge green">緑スキル要員</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SSRフォーエバーヤング（賢さ）</td>
-            <td data-label="主な狙い">勝負を懸けて、快速、地固め</td>
-            <td data-label="向いている脚質">逃げ/先行/汎用</td>
-            <td data-label="評価"><span class="badge red">本育成兼用</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SSRミホノブルボン（パワー）</td>
-            <td data-label="主な狙い">逃げ直線、逃げコーナー、切り込み隊長</td>
-            <td data-label="向いている脚質">逃げ</td>
-            <td data-label="評価"><span class="badge orange">逃げ因子</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SRマーベラスサンデー（賢さ）</td>
-            <td data-label="主な狙い">逃げためらい、先行ためらい</td>
-            <td data-label="向いている脚質">デバフ/上位狙い</td>
-            <td data-label="評価"><span class="badge blue">メタ枠</span></td>
-          </tr>
-          <tr>
-            <td data-label="サポカ">SRメジロドーベル（根性）</td>
-            <td data-label="主な狙い">右回り○、京都レース場○</td>
-            <td data-label="向いている脚質">汎用</td>
-            <td data-label="評価"><span class="badge green">緑スキル要員</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="mini-source">
-        根拠：<a href="https://game8.jp/umamusume/782237">Game8 ぱかライブTV’ #2まとめ</a>、
-        <a href="https://game8.jp/umamusume/600610">Game8 5月LoH攻略</a>、
-        <a href="https://umamusumelabo.com/event/loh/loh-insisupport-202605">ウマ娘ラボ 因子周回おすすめサポカ</a>、
-        <a href="https://kamigame.jp/umamusume/page/415879483795500478.html">神ゲー攻略 5月LoH因子周回</a>
-      </p>
-    </section>
-
-    <section class="section" id="factors">
-      <h2 class="section-title green">因子周回プラン</h2>
-      <div class="callout green">
-        基本はDreams周回。育成目標に縛られにくいため、親と祖父母で同じG1を走らせやすく、重賞ボーナスを揃えやすいです。
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>脚質</th>
-            <th>親候補</th>
-            <th>狙いたい白因子</th>
-            <th>メモ</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="脚質"><span class="badge red">逃げ</span></td>
-            <td data-label="親候補">ニシノ、ウンス、マーチャン、チアバクシン</td>
-            <td data-label="狙いたい白因子">地固め、危険回避、押しの一手、譲れぬ一歩</td>
-            <td data-label="メモ">逃げ2以上ならニシノも有力。単逃げ運用なら1位加速を厚めにします。</td>
-          </tr>
-          <tr>
-            <td data-label="脚質"><span class="badge orange">先行</span></td>
-            <td data-label="親候補">ニシノ、アーモンドアイ、水着タキオン、花嫁カレン</td>
-            <td data-label="狙いたい白因子">火花散らして、真っ向勝負、余勢を駆って</td>
-            <td data-label="メモ">3〜5位を取るため、中盤速度の継承固有も重要です。</td>
-          </tr>
-          <tr>
-            <td data-label="脚質"><span class="badge blue">差し</span></td>
-            <td data-label="親候補">ニシノ、バンブー、水着クラウン、ブライアン</td>
-            <td data-label="狙いたい白因子">差し切り体勢、ターニングポイント、十万バリキ</td>
-            <td data-label="メモ">順位条件が厳しいため、安定より上振れ狙いです。</td>
-          </tr>
-          <tr>
-            <td data-label="脚質"><span class="badge blue">追込</span></td>
-            <td data-label="親候補">ニシノ、バンブー、グラン、ブライアン</td>
-            <td data-label="狙いたい白因子">ヒートアップ、切れ味、一足飛び、登竜門</td>
-            <td data-label="メモ">SSRデュランダル系の追込スキル因子を厚くしたい枠です。</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="section" id="rotation">
-      <h2 class="section-title green">おすすめローテーション</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>時期</th>
-            <th>出走候補</th>
-            <th>目的</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-label="時期">ジュニア</td>
-            <td data-label="出走候補">阪神JF、ホープフルS</td>
-            <td data-label="目的">マイル/中距離G1の重賞ボーナス土台作り</td>
-          </tr>
-          <tr>
-            <td data-label="時期">クラシック前半</td>
-            <td data-label="出走候補">桜花賞、NHKマイルC、オークス、安田記念</td>
-            <td data-label="目的">ティアラ路線で親同士の勝利G1を揃える</td>
-          </tr>
-          <tr>
-            <td data-label="時期">クラシック後半</td>
-            <td data-label="出走候補">スプリンターズS、エリザベス女王杯、マイルCS</td>
-            <td data-label="目的">短距離/マイル中心に相性とスキルPtを確保</td>
-          </tr>
-          <tr>
-            <td data-label="時期">シニア</td>
-            <td data-label="出走候補">高松宮記念、ヴィクトリアマイル、安田記念、スプリンターズS</td>
-            <td data-label="目的">本番条件に近い短距離G1とマイルG1を厚くする</td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="mini-source">
-        根拠：<a href="https://kamigame.jp/umamusume/page/415879483795500478.html">神ゲー攻略 5月LoH因子周回</a>
-      </p>
-    </section>
-
-    <section class="section" id="checks">
-      <h2 class="section-title red">本育成チェックリスト</h2>
-      <div class="callout red">
-        目標ステータスは「スピード最優先、逃げはスタミナを厚め」が基本です。先行〜追込はスタミナ600以上を最低ラインにしつつ、悪天候やバ場ランダムを考えて余裕を持たせます。
-      </div>
-      <div class="stat-grid" aria-label="目標ステータス">
-        <div class="stat-card speed">
-          <span class="stat-label">スピード</span>
-          <span class="stat-value">1900+</span>
-          <span class="stat-note">全脚質で最優先</span>
-        </div>
-        <div class="stat-card stamina">
-          <span class="stat-label">スタミナ</span>
-          <span class="stat-value">600-1000</span>
-          <span class="stat-note">逃げは900〜1000目安</span>
-        </div>
-        <div class="stat-card power">
-          <span class="stat-label">パワー</span>
-          <span class="stat-value">1400</span>
-          <span class="stat-note">加速後の伸びを確保</span>
-        </div>
-        <div class="stat-card guts">
-          <span class="stat-label">根性</span>
-          <span class="stat-value">1200+</span>
-          <span class="stat-note">追い比べ・終盤補助</span>
-        </div>
-        <div class="stat-card wisdom">
-          <span class="stat-label">賢さ</span>
-          <span class="stat-value">1200+</span>
-          <span class="stat-note">位置取りとスキル発動</span>
-        </div>
-      </div>
-      <ul class="checklist">
-        <li><span class="badge red">必須</span> 短距離Sが付いている</li>
-        <li><span class="badge red">必須</span> 終盤加速を脚質に合わせて複数確保している</li>
-        <li><span class="badge orange">高優先</span> 右回り、春ウマ娘、根幹距離、京都レース場を取れている</li>
-        <li><span class="badge orange">高優先</span> 逃げ/先行はコンセントレーションを取れている</li>
-        <li><span class="badge green">仕上げ</span> スピード1900以上、パワー1400前後、根性/賢さ1200以上を目安にする</li>
-      </ul>
-
-      <h3>本育成で取得すべきスキル優先度</h3>
-      <div class="skill-priority">
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>S</strong>
-            <span class="badge red">最優先</span>
-          </div>
-          <div>
-            <h3>コンセントレーション</h3>
-            <div class="skill-meta">
-              <span class="badge blue">全脚質、特に逃げ/先行</span>
-              <span class="badge red">スタート事故対策</span>
-            </div>
-            <p><strong>効果：</strong>スタートが得意になり、出遅れる時間が少なくなる。</p>
-            <p><strong>発動条件：</strong>スタート時。京都1200mは序盤の追い越し困難区間と位置取りが重く、前脚質は出遅れがそのまま加速条件の崩れにつながるため最優先。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>S</strong>
-            <span class="badge red">脚質別必須</span>
-          </div>
-          <div>
-            <h3>火花散らして / 真っ向勝負 / 譲れぬ一歩</h3>
-            <div class="skill-meta">
-              <span class="badge orange">先行</span>
-              <span class="badge red">逃げ</span>
-              <span class="badge green">終盤始め加速</span>
-            </div>
-            <p><strong>火花散らして：</strong>レース終盤始めの方で前方にいると加速力がわずかに上がる＜先行・短距離＞。上位は丁々発止。</p>
-            <p><strong>真っ向勝負：</strong>レース終盤始めの方で前方にいると加速力がわずかに上がる＜作戦・先行＞。上位は鍔迫り合い。</p>
-            <p><strong>譲れぬ一歩：</strong>レース終盤始めの方で前方にいると加速力がわずかに上がる＜逃げ・短距離＞。上位はイニシアチブ。</p>
-            <p><strong>発動条件：</strong>京都1200mでは終盤開始が800m付近。終盤始めの加速が有効になりやすいため、先行は火花散らして＋真っ向勝負、逃げは譲れぬ一歩を優先。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>A</strong>
-            <span class="badge orange">高優先</span>
-          </div>
-          <div>
-            <h3>地固め / 先手必勝・先駆け / 危険回避 / ポジションセンス</h3>
-            <div class="skill-meta">
-              <span class="badge red">逃げ向け</span>
-              <span class="badge blue">序盤位置取り</span>
-            </div>
-            <p><strong>地固め：</strong>レース序盤にスキルを多く発動すると加速力がわずかに上がる。上位は盤石の構え。</p>
-            <p><strong>先手必勝/先駆け：</strong>レース序盤で前に行きやすくなる/わずかに前に行きやすくなる＜作戦・逃げ＞。</p>
-            <p><strong>危険回避：</strong>レース序盤に少し囲まれにくくなる＜作戦・逃げ＞。</p>
-            <p><strong>ポジションセンス：</strong>レース序盤にコース取りがうまくなる。</p>
-            <p><strong>発動条件：</strong>いずれも序盤。逃げは先頭争いの負けが致命傷なので、地固め用の緑スキルや序盤スキルとセットで積みます。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>A</strong>
-            <span class="badge orange">全脚質</span>
-          </div>
-          <div>
-            <h3>スプリントギア / 押せ押せムード</h3>
-            <div class="skill-meta">
-              <span class="badge green">短距離加速</span>
-              <span class="badge blue">サブ加速</span>
-            </div>
-            <p><strong>スプリントギア：</strong>レース終盤に加速力がわずかに上がる＜短距離＞。上位はスプリントターボ。</p>
-            <p><strong>押せ押せムード：</strong>レース終盤始めの方で前方にいると加速力がわずかに上がる＜短距離＞。</p>
-            <p><strong>発動条件：</strong>短距離条件。どちらも終盤加速の補助として有効。脚質専用加速を取ったうえで、サブ加速として積む優先度が高いです。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>B</strong>
-            <span class="badge blue">後方用</span>
-          </div>
-          <div>
-            <h3>一足飛び / 電光石火</h3>
-            <div class="skill-meta">
-              <span class="badge blue">差し/追込</span>
-              <span class="badge green">終盤加速</span>
-            </div>
-            <p><strong>一足飛び：</strong>レース終盤に後方で追い抜こうとすると加速力がわずかに上がる＜短距離/マイル＞。上位は電光石火。</p>
-            <p><strong>電光石火：</strong>レース終盤に後方で追い抜こうとすると加速力が上がる＜短距離/マイル＞。</p>
-            <p><strong>発動条件：</strong>終盤に後方で追い抜こうとすること。LoH京都1200mでは差し/追込の安定度が低いため、後方脚質を使う場合のみ採用候補。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>B</strong>
-            <span class="badge green">条件確定</span>
-          </div>
-          <div>
-            <h3>右回り○ / 春ウマ娘○ / 根幹距離○ / 京都レース場○</h3>
-            <div class="skill-meta">
-              <span class="badge green">緑スキル</span>
-              <span class="badge orange">ステータス底上げ</span>
-            </div>
-            <p><strong>右回り○：</strong>右回りコースが少し得意になる。上位に右回りの鬼。</p>
-            <p><strong>春ウマ娘○：</strong>春のレースが少し得意になる。上位に春一番。</p>
-            <p><strong>根幹距離○：</strong>根幹距離、400mの倍数が少し得意になる。京都1200mは該当。</p>
-            <p><strong>京都レース場○：</strong>京都レース場が少し得意になる。上位に淀の申し子。</p>
-            <p><strong>発動条件：</strong>レース条件一致で確定発動。スキルPt効率が良く、地固めの起動にも使えるため、ヒントLvが高ければ優先して取得。</p>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-rank">
-            <strong>C</strong>
-            <span class="badge green">余裕枠</span>
-          </div>
-          <div>
-            <h3>短距離直線○ / 短距離コーナー○ / ウマ好み / トップランナー・先頭プライド</h3>
-            <div class="skill-meta">
-              <span class="badge blue">速度</span>
-              <span class="badge orange">ヒントLv優先</span>
-            </div>
-            <p><strong>短距離直線○：</strong>直線で速度がわずかに上がる＜短距離＞。</p>
-            <p><strong>短距離コーナー○：</strong>コーナーで速度がわずかに上がる＜短距離＞。</p>
-            <p><strong>ウマ好み：</strong>近くにウマ娘がたくさんいると速度がわずかに上がる。上位はウママニア。</p>
-            <p><strong>トップランナー/先頭プライド：</strong>レース序盤または中盤に追い抜きや競り合いに強くなる/わずかに強くなる＜逃げ＞。</p>
-            <p><strong>発動条件：</strong>直線、コーナー、近くに複数ウマ娘、逃げの追い抜き/競り合いなど。終盤加速と序盤セットを取った後、ヒントLvが高いものから取得。</p>
-          </div>
-        </div>
-      </div>
-      <p class="skill-source">
-        スキル効果・条件の確認元：
-        <a href="https://game8.jp/umamusume/600610">Game8 5月LoH攻略</a>、
-        <a href="https://umamusumelabo.com/event/loh/loh-kyoto1200-202605">ウマ娘ラボ 京都1200m解説</a>、
-        <a href="https://game8.jp/umamusume/372740">コンセントレーション</a>、
-        <a href="https://game8.jp/umamusume/416239">真っ向勝負</a>、
-        <a href="https://gamewith.jp/uma-musume/article/show/483318">火花散らして</a>、
-        <a href="https://game8.jp/umamusume/666507">譲れぬ一歩</a>、
-        <a href="https://game8.jp/umamusume/372810">地固め</a>、
-        <a href="https://game8.jp/umamusume/372855">スプリントギア</a>。
-      </p>
-      <div class="callout gray">
-        LoHは3人全員の着順でスコアを積みます。1人の爆発力より、3人が大崩れしない編成とスキル構成を優先しましょう。
+    <section class="section" aria-labelledby="strategy-heading">
+      <h2 class="section-title orange" id="strategy-heading">攻略サイト</h2>
+      <div class="link-grid">
+        <article class="link-card strategy">
+          <h3><a href="https://game8.jp/umamusume">Game8 ウマ娘攻略</a></h3>
+          <p>育成、イベント、キャラ、サポートカード情報など。</p>
+        </article>
+        <article class="link-card strategy">
+          <h3><a href="https://kamigame.jp/umamusume/">神ゲー攻略 ウマ娘攻略</a></h3>
+          <p>コース解説やイベント攻略などを確認できます。</p>
+        </article>
+        <article class="link-card strategy">
+          <h3><a href="https://gamewith.jp/uma-musume/">GameWith ウマ娘攻略</a></h3>
+          <p>攻略記事やスキル情報を探しやすいサイトです。</p>
+        </article>
+        <article class="link-card strategy">
+          <h3><a href="https://umamusumelabo.com/">ウマ娘ラボ</a></h3>
+          <p>LoHやチャンミ向けの考察記事を確認できます。</p>
+        </article>
+        <article class="link-card strategy">
+          <h3><a href="https://gametora.com/umamusume">GameTora Umamusume</a></h3>
+          <p>キャラやサポートカードのデータ確認に便利です。</p>
+        </article>
       </div>
     </section>
 
-    <section class="section" id="sources">
-      <h2 class="section-title">情報源リンク</h2>
-      <div class="sources">
-        <div class="source-card">
-          <a href="https://game8.jp/umamusume/600610">Game8 5月LoH短距離攻略</a>
-          <span>開催条件、スタミナ目安、編成方針、報酬情報の確認に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://kamigame.jp/umamusume/page/414884391345499755.html">神ゲー攻略 コース解説</a>
-          <span>京都1200mの区間、上り坂、加速スキル評価の確認に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://kamigame.jp/umamusume/page/415879483795500478.html">神ゲー攻略 因子周回</a>
-          <span>脚質別の継承親、因子方針、Dreams周回方針の確認に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://umamusumelabo.com/event/loh/loh-kyoto1200-202605">ウマ娘ラボ 京都1200m解説</a>
-          <span>有効加速、継承固有候補、緑スキルの整理に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://game8.jp/umamusume/782237">Game8 ぱかライブTV’ #2まとめ</a>
-          <span>最新ガチャ、SSRアグネスデジタル、SSRタップダンスシチー、配布SSRアグネスタキオンの確認に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://umamusumelabo.com/event/loh/loh-insisupport-202605">ウマ娘ラボ 因子周回おすすめサポカ</a>
-          <span>京都芝1200m向けの因子周回サポカ候補と狙う白因子の整理に使用。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://gametora.com/umamusume/supports">GameTora Support Card DB</a>
-          <span>サポートカード画像とカード種別の確認に使用。画像素材はCanvaにも取り込み済み。</span>
-        </div>
-        <div class="source-card">
-          <a href="https://www.youtube.com/watch?v=VxDtIgKbWsA">指定YouTube動画</a>
-          <span>ユーザー指定の参考動画。詳細確認用リンクとして掲載。</span>
-        </div>
+    <section class="section" aria-labelledby="notice-heading">
+      <h2 class="section-title" id="notice-heading">このサイトについて</h2>
+      <div class="notice">
+        <p>
+          このWebサイトは、個人が趣味で運営している非公式のメモ置き場です。収益化を目的としたものではありません。
+        </p>
+        <p>
+          ページ作成にはAIも利用しています。できるだけ確認しながらまとめていますが、最終的な情報の判断や確認は、公式情報や各攻略サイトもあわせてご自身で行ってください。
+        </p>
       </div>
     </section>
-
-    <footer>
-      サンプルページです。実装時は最新のゲーム内告知と各攻略サイトの更新日を確認してください。
-    </footer>
   </main>
 </body>
 </html>
