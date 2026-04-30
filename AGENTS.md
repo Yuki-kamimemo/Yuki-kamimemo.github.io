@@ -86,6 +86,7 @@ sources:
 - `_includes/footer.html`: ガイド共通フッター
 - `_includes/giscus.html`: コメント欄
 - `_includes/share-links.html`: SNS共有リンク
+- `_includes/floating-menu.html`: 右下固定メニュー。トップ、ページ内項目、カテゴリ、最近の攻略メモへの導線
 - `_includes/sources.html`: `page.sources` 駆動の情報源欄
 - `_includes/tags.html`: タグバッジ列
 - `_includes/card-summary.html`、`card-style.html`、`card-support.html`、`callout.html`、`badge.html`、`source-card.html`: 本文部品
@@ -136,6 +137,15 @@ sources:
 - SNS共有リンクは `_includes/share-links.html` を使い、`home`、`default`、`guide` layoutから自動挿入する。本文へ重複して書かない。
 - 共有URLは `page.url | absolute_url`、共有文は `page.title | default: site.title`。共有先はX、LINE、Facebook、ページURLを基本にする。
 - 共有不要ページは front matter に `share: false` を入れる。現在は404ページで使う。
+
+## 右下固定メニュー
+
+- 右下固定メニューは `_includes/floating-menu.html` と `assets/js/floating-menu.js` で管理し、`home`、`default`、`guide` layoutから自動挿入する。本文へ重複して書かない。
+- ボタンは常時表示し、クリック/タップで開閉できる。Escキー、外側クリック、リンク選択で閉じる挙動を維持する。
+- メニューには最低限、トップページ、ページ上部、本文、カテゴリ、最近の攻略メモへの導線を入れる。
+- ページ内ショートカットは、ガイドページでは `.blog-nav a[href^="#"]` を優先し、通常ページでは `.section[id]` と見出しから自動生成する。
+- 固定メニューの見た目は `assets/css/home.css` と `assets/css/guide.css` の `.floating-menu*` に合わせる。新しいCSSファイルは作らない。
+- メニューが本文、共有ダイアログ、giscus、スマホ表示切り替えボタンを大きく妨げないよう、`z-index`、右下余白、最大高さ、スクロール可能状態を維持する。
 
 ## CSSとデザイン
 
