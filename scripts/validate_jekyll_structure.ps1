@@ -50,7 +50,8 @@ $requiredPaths = @(
   "factor/index.html",
   "course/index.html",
   "tags/index.html",
-  "assets/css/list.css"
+  "assets/css/list.css",
+  "assets/css/tokens.css"
 )
 
 foreach ($path in $requiredPaths) {
@@ -70,6 +71,7 @@ Assert-Contains "_layouts/home.html" "include\s+share-links.html\s+mode='dialog'
 Assert-Contains "_layouts/default.html" "include\s+share-links.html\s+mode='dialog'" "default layout must include share dialog"
 Assert-Contains "_includes/head.html" "article:published_time" "head include must output article published time"
 Assert-Contains "_includes/head.html" "og:site_name" "head include must output og:site_name"
+Assert-Contains "_includes/head.html" "assets/css/tokens\.css" "head include must load public CSS tokens"
 Assert-Contains "_includes/giscus.html" 'data-mapping="pathname"' "giscus must map discussions by pathname"
 Assert-Contains "_includes/share-links.html" "twitter.com/intent/tweet" "share links must include X sharing"
 Assert-Contains "_includes/share-links.html" "social-plugins.line.me/lineit/share" "share links must include LINE sharing"
