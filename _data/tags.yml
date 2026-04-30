@@ -15,3 +15,7 @@ factor:
   label: "因子周回"
 course:
   label: "コース攻略"
+rotation:
+  label: "ローテーション"
+scenario:
+  label: "育成シナリオ"

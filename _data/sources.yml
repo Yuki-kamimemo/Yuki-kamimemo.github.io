@@ -26,3 +26,31 @@ official-pakalive-2:
   name: "「ウマ娘 プリティーダービー」ぱかライブTV' #2"
   url: "https://www.youtube.com/watch?v=VxDtIgKbWsA"
   note: "公式番組内の発表内容を確認するためのリンク。"
+game8-loh-short-2026-05:
+  name: "Game8 5月LoH短距離攻略"
+  url: "https://game8.jp/umamusume/600610"
+  note: "2026年5月LoH短距離のおすすめキャラ、継承親、スキル、Dreamsサポカ編成、京都1200m条件の確認に使用。確認日: 2026-04-30。"
+game8-dreams:
+  name: "Game8 新シナリオDreams攻略"
+  url: "https://game8.jp/umamusume/763745"
+  note: "Dreamsシナリオの立ち回り、5タイプ以上編成、SSRカジノドライヴ、SSRフォーエバーヤングの扱いを確認。確認日: 2026-04-30。"
+game8-short-factor:
+  name: "Game8 短距離因子周回"
+  url: "https://game8.jp/umamusume/584172"
+  note: "短距離因子周回の育成ポイント、短距離赤因子、G1中心ローテ、欲しいスキルを上位まで取る方針の確認に使用。確認日: 2026-04-30。"
+game8-factor-general:
+  name: "Game8 因子周回のやり方"
+  url: "https://game8.jp/umamusume/460250"
+  note: "G1レース20戦前後、相性、赤因子A以上、因子再獲得など周回の共通方針の確認に使用。確認日: 2026-04-30。"
+gamewith-short-distance:
+  name: "GameWith 短距離育成論"
+  url: "https://gamewith.jp/uma-musume/article/show/258804"
+  note: "脚質別の短距離おすすめキャラ、短距離・芝・脚質因子、スピード・パワー重視の考え方の確認に使用。確認日: 2026-04-30。"
+gamewith-scenario:
+  name: "GameWith おすすめ育成シナリオ"
+  url: "https://gamewith.jp/uma-musume/article/show/317671"
+  note: "育成シナリオの目的別比較と最新シナリオ情報の確認に使用。確認日: 2026-04-30。"
+gametora-characters:
+  name: "GameTora Character DB"
+  url: "https://gametora.com/umamusume/characters"
+  note: "ウマ娘の画像、距離適性、脚質適性の確認に使用。画像引用元として各画像付近にもリンクを掲載。確認日: 2026-04-30。"

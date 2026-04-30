@@ -351,6 +351,12 @@
       border-color: #bbe8d7;
     }
 
+    .callout.orange {
+      color: #8a4a0d;
+      background: var(--orange-soft);
+      border-color: #ffd8a6;
+    }
+
     .callout.gray {
       color: #485568;
       background: var(--gray-soft);
@@ -649,6 +655,62 @@
     .card-tile figcaption a:hover {
       background: #fff;
       text-decoration: none;
+    }
+
+    .image-roster .card-tile {
+      background: linear-gradient(180deg, #fff8ed, #1d2535);
+    }
+
+    .image-roster .card-tile img {
+      object-fit: contain;
+      object-position: center bottom;
+      padding: 10px 10px 78px;
+    }
+
+    .rotation-flow {
+      display: grid;
+      gap: 12px;
+    }
+
+    .rotation-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 10px 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper-strong);
+      box-shadow: 0 10px 24px rgba(81, 54, 20, 0.06);
+    }
+
+    .rotation-step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font-weight: 1000;
+      line-height: 1;
+    }
+
+    .rotation-step strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    .rotation-step p {
+      grid-column: 2;
+      margin: -6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .blog-nav {
