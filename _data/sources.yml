@@ -66,6 +66,66 @@ game8-mile-training:
   name: "Game8 マイル適性の育成方法"
   url: "https://game8.jp/umamusume/373393"
   note: "マイル育成の基本方針、マイル適性スキル、サポートカード候補の確認に使用。確認日: 2026-04-30。"
+gamewith-mile-distance:
+  name: "GameWith マイル適性の育成論"
+  url: "https://gamewith.jp/uma-musume/article/show/258806"
+  note: "マイル育成のスタミナ目安、スピード重視、逃げ・先行のスキル重視、差し・追込のパワー重視方針の照合に使用。確認日: 2026-04-30。"
+kamigame-mile-factor:
+  name: "神ゲー攻略 チャンミマイル因子周回"
+  url: "https://kamigame.jp/umamusume/page/306295405983879204.html"
+  note: "マイル因子周回の赤因子優先度、脚質別の終盤加速親、青因子の考え方の照合に使用。確認日: 2026-04-30。"
+kamigame-mile-training:
+  name: "神ゲー攻略 マイル育成おすすめキャラとサポカ編成"
+  url: "https://kamigame.jp/umamusume/page/147452599057003685.html"
+  note: "マイル育成のおすすめキャラ、マイル因子、サポート編成方針、キャラプール確認に使用。確認日: 2026-04-30。"
+note-mile-loh-2026:
+  name: "note 2月LoHマイル因子周回メモ"
+  url: "https://note.com/umamusume_sui/n/nc06a7209203f"
+  note: "東京芝1600m向けの脚質別継承候補、加速・中盤速度・終盤速度の実践メモとして補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+gamewith-medium-distance:
+  name: "GameWith 中距離適性の育成論"
+  url: "https://gamewith.jp/uma-musume/article/show/258799"
+  note: "中距離育成のステータス目安、スタミナ・スピード・パワー配分、サポート編成方針の照合に使用。確認日: 2026-04-30。"
+note-medium-factor-grandparent:
+  name: "note 中距離因子（祖父母）メモ"
+  url: "https://note.com/mustbethetruth/n/n574754495c42"
+  note: "中距離祖父母因子を作る際のダート/マイルローテ併用、相性値を意識した実践メモとして補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+gamewith-long-distance:
+  name: "GameWith 長距離適性の育成論"
+  url: "https://gamewith.jp/uma-musume/article/show/258797"
+  note: "長距離育成のスタミナ目安、長距離G1の少なさ、出走おすすめレース、回復スキル方針の照合に使用。確認日: 2026-04-30。"
+note-long-loh-factor:
+  name: "note LoH長距離因子周回メモ"
+  url: "https://note.com/yupon_uma/n/n63cf0a8d7b75"
+  note: "長距離LoH向けのG1ローテ、相性値、登山家・ウマ好みなどの実践的な白因子狙いを補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+note-long-factor-grandparent:
+  name: "note 長距離因子（祖父母）メモ"
+  url: "https://note.com/mustbethetruth/n/ne54d9a200566"
+  note: "長距離祖父母にマイル/ダート赤因子を混ぜる考え方の実践メモとして補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+gamewith-dirt:
+  name: "GameWith ダート適性の育成論"
+  url: "https://gamewith.jp/uma-musume/article/show/284493"
+  note: "ダート適性キャラ、脚質別おすすめ、ダート育成のサポート編成方針の照合に使用。確認日: 2026-04-30。"
+note-factor-red-basis:
+  name: "note 因子周回の基礎知識"
+  url: "https://note.com/yupon_uma/n/n77d403cea38f"
+  note: "欲しい赤因子以外の適性Aを増やしすぎない考え方、相性値、因子周回キャラ選びの基礎メモとして補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+blog-beyond-factor:
+  name: "マイセンのブログ ビヨンドシナリオ因子周回"
+  url: "https://mysen.muragon.com/entry/4110.html"
+  note: "Beyond系シナリオで因子周回する利点と欠点、出走可能レース数やヒント回収の実践メモとして補助的に参照。個人ブログのため主観・環境差に注意。確認日: 2026-04-30。"
+note-factor-stance:
+  name: "note 無課金ウマ娘 因子周回のスタンス"
+  url: "https://note.com/kotyoptg/n/ncbf3600c4d98"
+  note: "出走できるG1を広く勝つ考え方、シナリオごとのレース出走制約に関する個人実践メモとして補助的に参照。個人noteのため主観・環境差に注意。確認日: 2026-04-30。"
+kamigame-long-factor:
+  name: "神ゲー攻略 1月チャンミ長距離因子周回"
+  url: "https://kamigame.jp/umamusume/page/394900292161784254.html"
+  note: "長距離因子周回の脚質別親候補、白因子、サポート編成、シナリオ方針の照合に使用。確認日: 2026-04-30。"
+kamigame-dirt-factor:
+  name: "神ゲー攻略 4月チャンミダート因子周回"
+  url: "https://kamigame.jp/umamusume/page/413293744754821879.html"
+  note: "ダート因子周回の脚質別親候補、白因子、サポート編成、終盤加速候補の照合に使用。確認日: 2026-04-30。"
 gamewith-short-distance:
   name: "GameWith 短距離育成論"
   url: "https://gamewith.jp/uma-musume/article/show/258804"
