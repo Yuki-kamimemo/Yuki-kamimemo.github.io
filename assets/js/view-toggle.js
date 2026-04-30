@@ -11,7 +11,7 @@
 
   function updateButtonVisibility(btn) {
     if (!btn) return;
-    btn.style.display = window.innerWidth <= BREAKPOINT ? '' : 'none';
+    btn.style.display = window.innerWidth <= BREAKPOINT ? 'block' : 'none';
   }
 
   function init() {
