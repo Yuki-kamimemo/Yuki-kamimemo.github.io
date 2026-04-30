@@ -972,83 +972,149 @@
       font-weight: 800;
     }
 
-    @media (max-width: 860px) {
-      .hero,
-      .section {
-        padding: 22px;
-      }
 
-      .summary-grid,
-      .style-grid,
-      .support-grid,
-      .card-gallery,
-      .two-column,
-      .sources {
-        grid-template-columns: 1fr;
-      }
+/* ── トグルボタン ── */
+.view-toggle-btn {
+  display: none;
+  min-height: 38px;
+  padding: 7px 14px;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(81, 54, 20, 0.08);
+}
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
+.view-toggle-btn:hover {
+  background: var(--blue-soft);
+}
 
-      .hero-deck {
-        max-width: 360px;
-      }
+/* ── モバイルレイアウト（html[data-view="mobile"] が付いた場合のみ有効） ── */
+@media (max-width: 768px) {
+  html[data-view="mobile"] .page {
+    padding: 12px 10px 48px;
+  }
 
-      .stat-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+  html[data-view="mobile"] .hero,
+  html[data-view="mobile"] .section {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
 
-      .skill-row {
-        grid-template-columns: 1fr;
-      }
+  html[data-view="mobile"] .section-title {
+    font-size: 18px;
+  }
 
-      .share-summary {
-        align-items: stretch;
-        flex-direction: column;
-      }
+  /* Hero deck: 2列維持、高さ縮小、回転軽減 */
+  html[data-view="mobile"] .hero-inner {
+    grid-template-columns: 1fr;
+  }
 
-      .share-open-button {
-        width: 100%;
-      }
+  html[data-view="mobile"] .hero-card {
+    min-height: 110px;
+    transform: rotate(-1.5deg);
+  }
 
-      .share-links,
-      .share-copy {
-        grid-template-columns: 1fr;
-      }
+  html[data-view="mobile"] .hero-card img {
+    min-height: 110px;
+  }
 
-      .share-link,
-      .share-copy-button {
-        width: 100%;
-      }
+  html[data-view="mobile"] .hero-card:nth-child(2) {
+    transform: translateY(6px) rotate(2deg);
+  }
 
-      table,
-      thead,
-      tbody,
-      th,
-      td,
-      tr {
-        display: block;
-      }
+  /* グリッド: 2列に維持 */
+  html[data-view="mobile"] .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-      thead {
-        display: none;
-      }
+  html[data-view="mobile"] .style-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-      tr {
-        border-bottom: 1px solid var(--line);
-      }
+  html[data-view="mobile"] .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-      td {
-        border-bottom: 0;
-        padding: 9px 12px;
-      }
+  html[data-view="mobile"] .card-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-      td::before {
-        content: attr(data-label);
-        display: block;
-        color: var(--muted);
-        font-size: 12px;
-        font-weight: 800;
-      }
-    }
+  /* stat-grid: 3列 */
+  html[data-view="mobile"] .stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* 1列維持（変更なし） */
+  html[data-view="mobile"] .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-view="mobile"] .sources {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-view="mobile"] .skill-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* blog-nav: 折り返し */
+  html[data-view="mobile"] .blog-nav {
+    flex-wrap: wrap;
+  }
+
+  /* シェアセクション */
+  html[data-view="mobile"] .share-summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  html[data-view="mobile"] .share-open-button {
+    width: 100%;
+  }
+
+  html[data-view="mobile"] .share-links,
+  html[data-view="mobile"] .share-copy {
+    grid-template-columns: 1fr;
+  }
+
+  html[data-view="mobile"] .share-link,
+  html[data-view="mobile"] .share-copy-button {
+    width: 100%;
+  }
+
+  /* テーブル: ブロック表示 */
+  html[data-view="mobile"] table,
+  html[data-view="mobile"] thead,
+  html[data-view="mobile"] tbody,
+  html[data-view="mobile"] th,
+  html[data-view="mobile"] td,
+  html[data-view="mobile"] tr {
+    display: block;
+  }
+
+  html[data-view="mobile"] thead {
+    display: none;
+  }
+
+  html[data-view="mobile"] tr {
+    border-bottom: 1px solid var(--line);
+  }
+
+  html[data-view="mobile"] td {
+    border-bottom: 0;
+    padding: 9px 12px;
+  }
+
+  html[data-view="mobile"] td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+  }
+}
