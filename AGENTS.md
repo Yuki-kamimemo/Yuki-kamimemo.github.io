@@ -136,7 +136,7 @@ sources:
 - GitHubアカウントがない閲覧者向けにGoogleフォーム外部リンクを使える。フォーム回答はサイト改善のみに利用し、個人情報を収集しないこと、個人情報を含めた回答を送信しないことを明記する。
 - コメントは記事ごとに分けるため `data-mapping="pathname"` を維持する。
 - giscus設定は既存の `data-repo`、`data-repo-id`、`data-category`、`data-category-id`、`data-input-position="top"`、`data-theme="preferred_color_scheme"`、`data-lang="ja"` を維持する。
-- SNS共有リンクは `_includes/share-links.html` を使い、`_includes/floating-menu.html` の右下固定メニュー内から自動挿入する。本文や各layoutへ重複して書かない。
+- SNS共有リンクは `_includes/share-links.html` を使い、`_includes/floating-menu.html` の右下固定メニュー内に共有ボタンを自動挿入し、各layout末尾に共有ダイアログを1つだけ挿入する。本文へ重複して書かない。
 - 共有URLは `page.url | absolute_url`、共有文は `page.title | default: site.title`。共有先はX、LINE、Facebook、ページURLを基本にする。
 - 共有不要ページは front matter に `share: false` を入れる。現在は404ページで使う。
 

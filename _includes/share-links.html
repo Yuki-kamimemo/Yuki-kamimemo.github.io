@@ -4,15 +4,17 @@
   {% assign encoded_url = share_url | uri_escape %}
   {% assign encoded_title = share_title | uri_escape %}
   {% assign share_mode = include.mode | default: 'section' %}
-  {% assign share_dialog_id = 'share-dialog-' | append: share_mode %}
+  {% assign share_dialog_id = 'share-dialog' %}
   {% assign share_heading_id = 'share-heading-' | append: share_mode %}
-  {% if share_mode == 'floating' %}
-  <div class="floating-menu-group floating-menu-share" aria-labelledby="{{ share_heading_id }}" data-share-root>
+  {% if share_mode == 'floating-button' %}
+  <div class="floating-menu-group floating-menu-share" aria-labelledby="{{ share_heading_id }}">
     <span class="floating-menu-label" id="{{ share_heading_id }}">共有</span>
     <button class="share-open-button" type="button" data-share-open aria-haspopup="dialog" aria-controls="{{ share_dialog_id }}">
       このページを共有
     </button>
+  </div>
   {% else %}
+  {% if share_mode == 'section' %}
   <section class="section share-section" aria-labelledby="{{ share_heading_id }}" data-share-root>
     <div class="share-summary">
       <div>
@@ -23,6 +25,8 @@
         共有する
       </button>
     </div>
+  {% else %}
+  <div class="share-dialog-root" data-share-root>
   {% endif %}
     <dialog class="share-dialog" id="{{ share_dialog_id }}" aria-labelledby="{{ share_dialog_id }}-title">
       <div class="share-dialog-panel">
@@ -49,7 +53,8 @@
       section.dataset.shareReady = "true";
 
       const dialog = section.querySelector(".share-dialog");
-      const openButton = section.querySelector("[data-share-open]");
+      if (!dialog) return;
+      const openButtons = document.querySelectorAll(`[data-share-open][aria-controls="${dialog.id}"]`);
       const closeButton = section.querySelector("[data-share-close]");
       const copyButton = section.querySelector("[data-share-copy]");
       const urlInput = section.querySelector(".share-url");
@@ -63,7 +68,7 @@
         }
       };
 
-      openButton?.addEventListener("click", () => {
+      const openDialog = () => {
         if (typeof dialog.showModal === "function") {
           dialog.showModal();
         } else {
@@ -72,6 +77,10 @@
         status.textContent = "";
         copyButton.textContent = "コピー";
         urlInput.select();
+      };
+
+      openButtons.forEach((openButton) => {
+        openButton.addEventListener("click", openDialog);
       });
 
       closeButton?.addEventListener("click", closeDialog);
@@ -97,9 +106,10 @@
       });
     })();
   </script>
-  {% if share_mode == 'floating' %}
+  {% if share_mode == 'dialog' %}
   </div>
   {% else %}
   </section>
+  {% endif %}
   {% endif %}
 {% endunless %}
