@@ -694,7 +694,8 @@ html[data-view="desktop"] .link-card {
   gap: 8px;
 }
 
-.floating-menu-group a {
+.floating-menu-group > a,
+.floating-menu-links a {
   display: flex;
   align-items: center;
   min-height: 38px;
@@ -708,9 +709,18 @@ html[data-view="desktop"] .link-card {
   box-shadow: 0 8px 18px rgba(102, 34, 58, 0.06);
 }
 
-.floating-menu-group a:hover {
+.floating-menu-group > a:hover,
+.floating-menu-links a:hover {
   background: var(--red-soft);
   text-decoration: none;
+}
+
+.floating-menu-share .share-open-button {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 11px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(102, 34, 58, 0.08);
 }
 
 

@@ -3,20 +3,31 @@
   {% assign share_title = page.title | default: site.title %}
   {% assign encoded_url = share_url | uri_escape %}
   {% assign encoded_title = share_title | uri_escape %}
-  <section class="section share-section" aria-labelledby="share-heading">
+  {% assign share_mode = include.mode | default: 'section' %}
+  {% assign share_dialog_id = 'share-dialog-' | append: share_mode %}
+  {% assign share_heading_id = 'share-heading-' | append: share_mode %}
+  {% if share_mode == 'floating' %}
+  <div class="floating-menu-group floating-menu-share" aria-labelledby="{{ share_heading_id }}" data-share-root>
+    <span class="floating-menu-label" id="{{ share_heading_id }}">共有</span>
+    <button class="share-open-button" type="button" data-share-open aria-haspopup="dialog" aria-controls="{{ share_dialog_id }}">
+      このページを共有
+    </button>
+  {% else %}
+  <section class="section share-section" aria-labelledby="{{ share_heading_id }}" data-share-root>
     <div class="share-summary">
       <div>
-        <h2 class="section-title" id="share-heading">共有</h2>
+        <h2 class="section-title" id="{{ share_heading_id }}">共有</h2>
         <p>攻略メモをSNSやURLコピーで共有できます。</p>
       </div>
-      <button class="share-open-button" type="button" data-share-open aria-haspopup="dialog" aria-controls="share-dialog">
+      <button class="share-open-button" type="button" data-share-open aria-haspopup="dialog" aria-controls="{{ share_dialog_id }}">
         共有する
       </button>
     </div>
-    <dialog class="share-dialog" id="share-dialog" aria-labelledby="share-dialog-title">
+  {% endif %}
+    <dialog class="share-dialog" id="{{ share_dialog_id }}" aria-labelledby="{{ share_dialog_id }}-title">
       <div class="share-dialog-panel">
         <div class="share-dialog-head">
-          <h3 id="share-dialog-title">このページを共有</h3>
+          <h3 id="{{ share_dialog_id }}-title">このページを共有</h3>
           <button class="share-close-button" type="button" data-share-close aria-label="共有画面を閉じる">×</button>
         </div>
         <div class="share-links" aria-label="SNS共有リンク">
@@ -33,7 +44,7 @@
     </dialog>
   <script>
     (() => {
-      const section = document.currentScript.closest(".share-section") || document.currentScript.previousElementSibling;
+      const section = document.currentScript.closest("[data-share-root]") || document.currentScript.previousElementSibling;
       if (!section || section.dataset.shareReady) return;
       section.dataset.shareReady = "true";
 
@@ -86,5 +97,9 @@
       });
     })();
   </script>
+  {% if share_mode == 'floating' %}
+  </div>
+  {% else %}
   </section>
+  {% endif %}
 {% endunless %}
