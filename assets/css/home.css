@@ -518,6 +518,39 @@ h1 {
 }
 
 
+/* ── ページアクション ── */
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.page-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 7px 14px;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: 0 10px 20px rgba(102, 34, 58, 0.08);
+}
+
+.page-actions a:hover {
+  background: var(--red-soft);
+  text-decoration: none;
+}
+
+.page-actions-top {
+  margin-bottom: 14px;
+}
+
+.page-actions-bottom {
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
 /* ── トグルボタン ── */
 .view-toggle-btn {
   display: none;
