@@ -1,0 +1,462 @@
+---
+layout: guide
+css: guide
+title: "マイル因子周回ローテーションとおすすめウマ娘・サポカ"
+description: "ウマ娘のマイル因子周回向けに、G1中心のレースローテーション、脚質別のおすすめ周回ウマ娘、無課金寄り・課金前提のサポートカード編成、因子目標を整理した攻略メモです。"
+date: 2026-04-30
+modified: 2026-04-30
+tags: [mile, factor, support-card, rotation, scenario]
+event: factor
+category: factor
+status: published
+permalink: /guides/factor/mile-rotation/
+theme_color: "#2d6ccf"
+eyebrow: "ウマ娘 因子周回メモ"
+h1: "マイル因子周回<br>ローテーションと育成セット"
+lead: "マイルS、脚質S、終盤加速の白因子を狙うための周回用メモです。2026年4月30日にマイル因子周回、汎用因子周回、Dreamsシナリオ、サポートカードDBをWeb検索で確認し、ローテ・親候補・サポカ編成をまとめました。"
+hero_cards_label: "マイル周回の注目カード"
+hero_cards:
+  - src: "https://gametora.com/images/umamusume/supports/tex_support_card_30290.png"
+    alt: "SSRカジノドライヴのサポートカード画像"
+    label: "Dreams周回の軸"
+    credit_name: "GameTora"
+    credit_url: "https://gametora.com/umamusume/supports"
+  - src: "https://gametora.com/images/umamusume/supports/tex_support_card_30018.png"
+    alt: "SSRニシノフラワーのサポートカード画像"
+    label: "マイル先行の因子候補"
+    credit_name: "GameTora"
+    credit_url: "https://gametora.com/umamusume/supports/30018-nishino-flower"
+sources:
+  - key: game8-mile-factor
+  - key: game8-mile-training
+  - key: game8-factor-general
+  - key: game8-dreams-support
+  - key: gamewith-scenario
+  - key: gametora-supports
+  - key: gametora-characters
+---
+<nav class="blog-nav" aria-label="ページ内ナビゲーション">
+  <a href="#summary">結論</a>
+  <a href="#rotation">ローテ</a>
+  <a href="#characters">ウマ娘</a>
+  <a href="#supports">サポカ</a>
+  <a href="#scenario">シナリオ</a>
+  <a href="#skills">因子目標</a>
+  <a href="#sources">情報源</a>
+</nav>
+
+<section class="section" id="summary">
+  <h2 class="section-title green">結論</h2>
+  <div class="summary-grid">
+    <div class="summary-card factor">
+      <strong>周回の軸</strong>
+      マイル赤因子を両親に置き、育成キャラのマイルA以上を維持します。G1を20戦前後走り、マイル・脚質・芝・加速・条件一致の緑スキルを拾う方針です。
+    </div>
+    <div class="summary-card high">
+      <strong>ローテの考え方</strong>
+      マイルG1は数が多めです。短距離・中距離A/Bのキャラなら、スプリンターズSや天皇賞秋、宝塚記念も足して相性とスキルPtを盛ります。
+    </div>
+    <div class="summary-card critical">
+      <strong>2026年4月末の前提</strong>
+      速く回すならプロジェクトL'Arc、最新シナリオ因子やDreams本育成の練習も兼ねるならDreams。サポカはレースボーナスと欲しい白因子を優先します。
+    </div>
+  </div>
+  <div class="callout green">
+    まず作るなら「逃げ用1体、先行用1体、差し・追込用1体」の順がおすすめです。マイルは終盤コーナー・終盤前半加速がコースごとに変わるため、脚質別の加速親を複数持っておくと使い回しやすいです。
+  </div>
+</section>
+
+<section class="section" id="rotation">
+  <h2 class="section-title green">マイル周回用ローテーション</h2>
+  <div class="two-column">
+    <div>
+      <h3>基本ローテ: マイルG1を軸に中距離を追加</h3>
+      <p>マイルA、中距離B以上のキャラで回しやすい形です。欲しい赤因子をマイルに寄せるため、適性Aを増やしすぎないようにしつつ、勝てるG1で相性を稼ぎます。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>時期</th>
+            <th>開催月</th>
+            <th>出走候補</th>
+            <th>狙い</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="時期">ジュニア級</td>
+            <td data-label="開催月">12月前半〜後半</td>
+            <td data-label="出走候補">阪神JF、朝日杯FS、ホープフルS</td>
+            <td data-label="狙い">マイルG1を早めに確保。中距離が走れるキャラだけホープフルSを足します。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">クラシック前半</td>
+            <td data-label="開催月">4月前半〜6月後半</td>
+            <td data-label="出走候補">桜花賞、皐月賞、NHKマイルC、オークス、日本ダービー、安田記念、宝塚記念</td>
+            <td data-label="狙い">NHKマイルCと安田記念を軸に、牝馬三冠やクラシック三冠を走れる範囲で追加。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">クラシック後半</td>
+            <td data-label="開催月">9月後半〜12月後半</td>
+            <td data-label="出走候補">スプリンターズS、秋華賞、菊花賞、天皇賞秋、エリザベス女王杯、マイルCS、ジャパンC、有馬記念</td>
+            <td data-label="狙い">マイルCSを最優先。短距離・中距離・長距離のG1は勝てる適性だけ採用します。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">シニア前半</td>
+            <td data-label="開催月">3月後半〜6月後半</td>
+            <td data-label="出走候補">高松宮記念、大阪杯、ヴィクトリアマイル、安田記念、宝塚記念</td>
+            <td data-label="狙い">ヴィクトリアマイルと安田記念でマイル勝利を追加。短距離Aなら高松宮記念も有効。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">シニア後半</td>
+            <td data-label="開催月">9月後半〜12月後半</td>
+            <td data-label="出走候補">スプリンターズS、天皇賞秋、エリザベス女王杯、マイルCS、ジャパンC、有馬記念</td>
+            <td data-label="狙い">最後にマイルCSを再取得し、走れるG1で20戦前後に近づけます。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rotation-flow" aria-label="マイル因子周回ローテーションの流れ">
+      <div class="rotation-step">
+        <span>1</span>
+        <strong>マイル赤因子を継承</strong>
+        <p>親2人にマイル因子を置き、育成キャラのマイルA以上を維持します。</p>
+      </div>
+      <div class="rotation-step">
+        <span>2</span>
+        <strong>G1を20戦前後</strong>
+        <p>マイルG1を軸に、短距離・中距離・長距離の勝てるG1を足します。</p>
+      </div>
+      <div class="rotation-step">
+        <span>3</span>
+        <strong>加速親を脚質別に作る</strong>
+        <p>逃げ、先行、差し・追込で欲しい継承固有と白因子が変わります。</p>
+      </div>
+      <div class="rotation-step">
+        <span>4</span>
+        <strong>再獲得で試行回数を増やす</strong>
+        <p>マイル3や欲しい白因子が出ない時は因子再獲得も使います。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>距離適性別の調整表</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>適性</th>
+        <th>採用するG1</th>
+        <th>周回向きの考え方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="適性"><span class="badge green">マイルA・短距離B以上</span></td>
+        <td data-label="採用するG1">阪神JF/朝日杯FS、桜花賞、NHKマイルC、安田記念、ヴィクトリアマイル、マイルCS、短距離G1</td>
+        <td data-label="周回向きの考え方">マイル親の基本形。短距離因子が混ざる可能性はありますが、勝ちやすくG1数を稼ぎやすいです。</td>
+      </tr>
+      <tr>
+        <td data-label="適性"><span class="badge orange">中距離B以上</span></td>
+        <td data-label="採用するG1">ホープフルS、皐月賞、日本ダービー、オークス、秋華賞、天皇賞秋、宝塚記念、大阪杯</td>
+        <td data-label="周回向きの考え方">相性とスキルPtを盛りやすい型。赤因子をマイルに寄せたい時は中距離A化しすぎないよう注意します。</td>
+      </tr>
+      <tr>
+        <td data-label="適性"><span class="badge blue">長距離C以上</span></td>
+        <td data-label="採用するG1">菊花賞、天皇賞春、有馬記念</td>
+        <td data-label="周回向きの考え方">相性値をさらに盛る上級者向け。勝率が落ちるなら無理に採用しません。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mini-source">
+    参考:
+    <a href="https://game8.jp/umamusume/595812" target="_blank" rel="noopener noreferrer">Game8 チャンミマイル因子周回</a>、
+    <a href="https://game8.jp/umamusume/460250" target="_blank" rel="noopener noreferrer">Game8 因子周回のやり方</a>
+  </p>
+</section>
+
+<section class="section" id="characters">
+  <h2 class="section-title orange">脚質別おすすめ周回ウマ娘</h2>
+  <div class="callout orange">
+    継承親は本育成キャラと同名にできません。マイルはニシノフラワー、タイキシャトル、セイウンスカイ、メジロライアン、メジロドーベルなど加速固有持ちの価値が高いので、本番メンバーと被らない親を先に決めます。
+  </div>
+
+  <div class="card-gallery image-roster" aria-label="マイル周回で候補にしやすいウマ娘画像">
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1004_100401.png" alt="マルゼンスキーの立ち絵">
+      <figcaption>マルゼンスキー<br><span class="badge red">逃げ</span><br><a href="https://gametora.com/umamusume/characters/100401-maruzensky" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1051_105101.png" alt="ニシノフラワーの立ち絵">
+      <figcaption>ニシノフラワー<br><span class="badge orange">先行</span><br><a href="https://gametora.com/umamusume/characters/105101-nishino-flower" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1010_101001.png" alt="タイキシャトルの立ち絵">
+      <figcaption>タイキシャトル<br><span class="badge orange">先行</span><br><a href="https://gametora.com/umamusume/characters/taiki-shuttle" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1006_100601.png" alt="オグリキャップの立ち絵">
+      <figcaption>オグリキャップ<br><span class="badge blue">先行・差し</span><br><a href="https://gametora.com/umamusume/characters/100601-oguri-cap" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+  </div>
+
+  <div class="style-grid">
+    <div class="style-card escape">
+      <h3>逃げ</h3>
+      <span class="badge red">加速親を優先</span>
+      <ul>
+        <li>セイウンスカイ、マルゼンスキー、サイレンススズカ、ダイタクヘリオスを候補にします。</li>
+        <li>狙う因子はマイル、逃げ、先駆け、地固め、危険回避、ポジションセンス、マイル直線。</li>
+        <li>終盤コーナー加速が有効なマイル条件では、逃げ親の完成度がそのまま勝率に響きます。</li>
+      </ul>
+    </div>
+    <div class="style-card front">
+      <h3>先行</h3>
+      <span class="badge orange">汎用性高め</span>
+      <ul>
+        <li>ニシノフラワー、タイキシャトル、オグリキャップ、ヤマニンゼファー、ダイイチルビーを候補にします。</li>
+        <li>狙う因子はマイル、先行、つぼみ、真っ向勝負、鍔迫り合い、マイルコーナー。</li>
+        <li>マイル先行は使う場面が多いので、まず1体は妥協ラインで完成させる価値があります。</li>
+      </ul>
+    </div>
+    <div class="style-card late">
+      <h3>差し</h3>
+      <span class="badge blue">加速と中盤を両立</span>
+      <ul>
+        <li>メジロライアン、メジロドーベル、グラスワンダー、ダイイチルビー、バンブーメモリーを候補にします。</li>
+        <li>狙う因子はマイル、差し、乗り換え上手、差し切り体勢、一足飛び、マイル直線。</li>
+        <li>後方脚質は加速だけでなく、中盤で前に出る白因子も一緒に厚くします。</li>
+      </ul>
+    </div>
+    <div class="style-card late">
+      <h3>追込</h3>
+      <span class="badge blue">差し親と兼用しやすい</span>
+      <ul>
+        <li>デュランダル、タイシン系、追込改造オグリキャップ、追込改造キングヘイローを候補にします。</li>
+        <li>狙う因子はマイル、追込、切れ味、抜群の切れ味、一足飛び、電光石火。</li>
+        <li>マイル追込は条件依存が強いため、明確に使う予定がある時だけ優先します。</li>
+      </ul>
+    </div>
+  </div>
+  <p class="mini-source">
+    参考:
+    <a href="https://game8.jp/umamusume/595812" target="_blank" rel="noopener noreferrer">Game8 チャンミマイル因子周回</a>、
+    <a href="https://game8.jp/umamusume/460250" target="_blank" rel="noopener noreferrer">Game8 因子周回のおすすめキャラ</a>
+  </p>
+</section>
+
+<section class="section" id="supports">
+  <h2 class="section-title red">脚質別おすすめサポートカード</h2>
+  <div class="callout red">
+    因子周回はステータス上振れより、欲しい白因子とレースボーナスを優先します。Dreamsで回す場合はSSRカジノドライヴを軸に、スピード1〜2枚と5タイプ以上の編成を意識します。
+  </div>
+
+  <div class="support-grid">
+    <div class="support-card core">
+      <div class="support-media">
+        <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30290.png" alt="SSRカジノドライヴのサポートカード画像">
+        <a class="image-source" href="https://gametora.com/umamusume/supports" target="_blank" rel="noopener noreferrer">引用元: GameTora</a>
+      </div>
+      <div class="support-body">
+        <h3>共通軸: SSRカジノドライヴ</h3>
+        <span class="badge red">Dreams優先</span>
+        <p>DreamsのDPを増やすシナリオリンク枠。無凸でも採用しやすく、レンタル枠を完凸の距離・脚質サポカに回せます。</p>
+      </div>
+    </div>
+    <div class="support-card factor">
+      <div class="support-media">
+        <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30018.png" alt="SSRニシノフラワーのサポートカード画像">
+        <a class="image-source" href="https://gametora.com/umamusume/supports/30018-nishino-flower" target="_blank" rel="noopener noreferrer">引用元: GameTora</a>
+      </div>
+      <div class="support-body">
+        <h3>先行加速: SSRニシノフラワー</h3>
+        <span class="badge orange">先行・マイル</span>
+        <p>先行向けの白因子を厚くしたい時の候補。マイル先行親を作る時は、加速と中盤速度のヒントを優先します。</p>
+      </div>
+    </div>
+    <div class="support-card latest">
+      <div class="support-media">
+        <img src="https://gametora.com/images/umamusume/supports/tex_support_card_30270.png" alt="SSRダイイチルビーのサポートカード画像">
+        <a class="image-source" href="https://gametora.com/umamusume/supports/30270-daiichi-ruby" target="_blank" rel="noopener noreferrer">引用元: GameTora</a>
+      </div>
+      <div class="support-body">
+        <h3>後方・汎用: SSRダイイチルビー</h3>
+        <span class="badge blue">差し・追込</span>
+        <p>差しや追込の白因子を狙う枠。後方脚質は加速因子だけでなく、終盤まで届くための速度因子も意識します。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>無課金寄り編成</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>脚質</th>
+        <th>編成例</th>
+        <th>狙い</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="脚質"><span class="badge red">逃げ</span></td>
+        <td data-label="編成例">スピード2、パワー、根性、賢さ、SSRカジノドライヴ。配布・交換サポカはレースボーナスと逃げヒントを優先。</td>
+        <td data-label="狙い">先駆け、地固め、危険回避、ポジションセンス、マイル直線を拾います。</td>
+      </tr>
+      <tr>
+        <td data-label="脚質"><span class="badge orange">先行</span></td>
+        <td data-label="編成例">スピード2、パワー、根性、賢さ、SSRカジノドライヴ。先行ヒント持ちSRやレンタル完凸を混ぜます。</td>
+        <td data-label="狙い">真っ向勝負、鍔迫り合い、マイルコーナー、遊びはおしまいっ！、ウマ好みを拾います。</td>
+      </tr>
+      <tr>
+        <td data-label="脚質"><span class="badge blue">差し・追込</span></td>
+        <td data-label="編成例">スピード2、パワー2、賢さ、SSRカジノドライヴ。後方加速サポカはレンタルで補います。</td>
+        <td data-label="狙い">差し切り体勢、一足飛び、切れ味、マイル直線、マイルコーナーを拾います。</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>課金・完凸前提の最適寄せ</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>脚質</th>
+        <th>優先候補</th>
+        <th>採用理由</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="脚質"><span class="badge red">逃げ</span></td>
+        <td data-label="優先候補">SSRカジノドライヴ、SSRフォーエバーヤング、逃げ用スピード/賢さ、マイルヒント持ちSSR</td>
+        <td data-label="採用理由">序盤位置取りと中盤速度の白因子を増やし、アングリング系の順位条件を安定させます。</td>
+      </tr>
+      <tr>
+        <td data-label="脚質"><span class="badge orange">先行</span></td>
+        <td data-label="優先候補">SSRカジノドライヴ、SSRフォーエバーヤング、SSRニシノフラワー、SSRケイエスミラクル、汎用賢さSSR</td>
+        <td data-label="採用理由">先行加速、マイル速度、賢さによる位置取りをまとめて補います。</td>
+      </tr>
+      <tr>
+        <td data-label="脚質"><span class="badge blue">差し</span></td>
+        <td data-label="優先候補">SSRカジノドライヴ、SSRフォーエバーヤング、SSRダイイチルビー、差し用パワー/賢さSSR</td>
+        <td data-label="採用理由">差し切り体勢、一足飛び、電光石火系、マイル速度の白因子候補を増やします。</td>
+      </tr>
+      <tr>
+        <td data-label="脚質"><span class="badge blue">追込</span></td>
+        <td data-label="優先候補">SSRカジノドライヴ、SSRフォーエバーヤング、SSRデュランダル、SSRスイープトウショウ、追込用スピード/パワーSSR</td>
+        <td data-label="採用理由">切れ味、抜群の切れ味、追込直線・コーナーを狙うピンポイント周回向けです。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mini-source">
+    参考:
+    <a href="https://game8.jp/umamusume/763926" target="_blank" rel="noopener noreferrer">Game8 Dreamsシナリオのおすすめサポカ編成</a>、
+    <a href="https://gametora.com/umamusume/supports" target="_blank" rel="noopener noreferrer">GameTora Support Card DB</a>
+  </p>
+</section>
+
+<section class="section" id="scenario">
+  <h2 class="section-title green">おすすめ周回シナリオ</h2>
+  <div class="summary-grid">
+    <div class="summary-card factor">
+      <strong>プロジェクトL'Arc</strong>
+      因子周回の速度重視なら有力。育成時間が短く、共通目標でローテを組みやすいため、マイル3の試行回数を稼ぎやすいです。
+    </div>
+    <div class="summary-card high">
+      <strong>Dreams</strong>
+      2026年4月末時点の最新寄り本育成候補。シナリオ因子、Dreams立ち回り、サポカ編成の練習を兼ねるならこちら。
+    </div>
+    <div class="summary-card critical">
+      <strong>レース多めシナリオ</strong>
+      G1勝利数と白因子量を厚くしたい時の選択肢。ただし1周が重くなりやすいため、普段使いはL'ArcかDreamsが楽です。
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>目的</th>
+        <th>おすすめ</th>
+        <th>理由</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="目的">短時間でマイル赤因子を掘る</td>
+        <td data-label="おすすめ">プロジェクトL'Arc</td>
+        <td data-label="理由">周回時間が短く、G1ローテと因子再獲得を組み合わせやすいです。</td>
+      </tr>
+      <tr>
+        <td data-label="目的">最新本育成にも慣れる</td>
+        <td data-label="おすすめ">Dreams</td>
+        <td data-label="理由">最新シナリオのサポカ編成、ステータス感、シナリオ因子を同時に確認できます。</td>
+      </tr>
+      <tr>
+        <td data-label="目的">白因子と相性を厚くする</td>
+        <td data-label="おすすめ">G1を多く走れるシナリオ</td>
+        <td data-label="理由">レース数を増やせるほど白因子候補と相性ボーナスを盛れます。時間に余裕がある日に回します。</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section" id="skills">
+  <h2 class="section-title">因子目標と終了ライン</h2>
+  <div class="skill-priority">
+    <div class="skill-row">
+      <div class="skill-rank">
+        <strong>S</strong>
+        <span class="badge red">最優先</span>
+      </div>
+      <div>
+        <h3>マイル赤因子、脚質赤因子</h3>
+        <div class="skill-meta">
+          <span class="badge green">マイルS狙い</span>
+          <span class="badge orange">本番脚質S狙い</span>
+        </div>
+        <p>マイル因子は最優先。逃げ・先行・差し・追込など本番脚質の赤因子も、継承でSを狙うため価値が高いです。</p>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-rank">
+        <strong>A</strong>
+        <span class="badge orange">加速</span>
+      </div>
+      <div>
+        <h3>アングリング系、つぼみ系、真っ向勝負、差し切り体勢、一足飛び</h3>
+        <div class="skill-meta">
+          <span class="badge red">脚質別</span>
+          <span class="badge blue">マイル用</span>
+        </div>
+        <p>マイルはコースごとに有効加速が変わります。脚質に合う加速固有と白加速を親側に持たせるのが基本です。</p>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-rank">
+        <strong>A</strong>
+        <span class="badge green">速度</span>
+      </div>
+      <div>
+        <h3>マイル直線、マイルコーナー、脚質直線、脚質コーナー、尻尾上がり</h3>
+        <div class="skill-meta">
+          <span class="badge green">汎用白因子</span>
+          <span class="badge orange">どのコースでも使いやすい</span>
+        </div>
+        <p>加速因子の次に厚くしたい枠。マイルは中盤位置取りが重要なので、直線・コーナー速度を多めに拾います。</p>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-rank">
+        <strong>B</strong>
+        <span class="badge blue">条件</span>
+      </div>
+      <div>
+        <h3>右回り、左回り、春ウマ娘、秋ウマ娘、根幹距離、レース場緑</h3>
+        <div class="skill-meta">
+          <span class="badge blue">開催条件次第</span>
+          <span class="badge red">本番前に更新</span>
+        </div>
+        <p>チャンミやLoHの条件が出たら優先度が上がります。常設のマイル親なら、右左・季節・根幹距離を広めに拾うと流用しやすいです。</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout gray">
+    終了ラインは「マイル3、使う脚質、加速白因子1つ以上、速度白因子2つ以上」を最低目安にします。まず片親を完成させ、もう片親で白因子の上振れを狙うと進めやすいです。
+  </div>
+</section>

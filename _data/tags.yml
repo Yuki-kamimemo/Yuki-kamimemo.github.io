@@ -3,6 +3,8 @@ loh:
   description: "リーグ・オブ・ヒーローズ攻略"
 short-distance:
   label: "短距離"
+mile:
+  label: "マイル"
 kyoto:
   label: "京都"
 turf:

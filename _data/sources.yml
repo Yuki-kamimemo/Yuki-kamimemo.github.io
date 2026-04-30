@@ -34,14 +34,26 @@ game8-dreams:
   name: "Game8 新シナリオDreams攻略"
   url: "https://game8.jp/umamusume/763745"
   note: "Dreamsシナリオの立ち回り、5タイプ以上編成、SSRカジノドライヴ、SSRフォーエバーヤングの扱いを確認。確認日: 2026-04-30。"
+game8-dreams-support:
+  name: "Game8 Dreamsシナリオのおすすめサポカ編成"
+  url: "https://game8.jp/umamusume/763926"
+  note: "Dreamsシナリオのサポカ編成方針、SSRカジノドライヴ、スピード1〜2枚、5タイプ以上編成の確認に使用。確認日: 2026-04-30。"
 game8-short-factor:
   name: "Game8 短距離因子周回"
   url: "https://game8.jp/umamusume/584172"
   note: "短距離因子周回の育成ポイント、短距離赤因子、G1中心ローテ、欲しいスキルを上位まで取る方針の確認に使用。確認日: 2026-04-30。"
+game8-mile-factor:
+  name: "Game8 チャンミマイル因子周回"
+  url: "https://game8.jp/umamusume/595812"
+  note: "マイル因子周回のおすすめキャラ、継承親、マイル赤因子、加速スキル、育成中ローテーションの確認に使用。確認日: 2026-04-30。"
 game8-factor-general:
   name: "Game8 因子周回のやり方"
   url: "https://game8.jp/umamusume/460250"
   note: "G1レース20戦前後、相性、赤因子A以上、因子再獲得など周回の共通方針の確認に使用。確認日: 2026-04-30。"
+game8-mile-training:
+  name: "Game8 マイル適性の育成方法"
+  url: "https://game8.jp/umamusume/373393"
+  note: "マイル育成の基本方針、マイル適性スキル、サポートカード候補の確認に使用。確認日: 2026-04-30。"
 gamewith-short-distance:
   name: "GameWith 短距離育成論"
   url: "https://gamewith.jp/uma-musume/article/show/258804"
