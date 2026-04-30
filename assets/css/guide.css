@@ -1231,6 +1231,37 @@
       box-shadow: 0 8px 18px rgba(81, 54, 20, 0.08);
     }
 
+    html[data-view="mobile"] .floating-menu {
+      right: max(10px, env(safe-area-inset-right));
+      bottom: max(10px, env(safe-area-inset-bottom));
+    }
+
+    html[data-view="mobile"] .floating-menu-button {
+      flex-direction: column;
+      gap: 3px;
+      min-width: 58px;
+      min-height: 48px;
+      padding: 6px 8px;
+      border-radius: 16px;
+      box-shadow: 0 12px 26px rgba(30, 35, 48, 0.18);
+    }
+
+    html[data-view="mobile"] .floating-menu-button-text {
+      font-size: 10px;
+      line-height: 1;
+    }
+
+    html[data-view="mobile"] .floating-menu-icon,
+    html[data-view="mobile"] .floating-menu-icon::before,
+    html[data-view="mobile"] .floating-menu-icon::after {
+      width: 17px;
+    }
+
+    html[data-view="mobile"] .floating-menu-panel {
+      width: min(320px, calc(100vw - 20px));
+      max-height: 68vh;
+    }
+
 
 /* ── トグルボタン ── */
 .view-toggle-btn {
@@ -1393,37 +1424,6 @@
   html[data-view="mobile"] .share-link,
   html[data-view="mobile"] .share-copy-button {
     width: 100%;
-  }
-
-  html[data-view="mobile"] .floating-menu {
-    right: max(10px, env(safe-area-inset-right));
-    bottom: max(10px, env(safe-area-inset-bottom));
-  }
-
-  html[data-view="mobile"] .floating-menu-button {
-    flex-direction: column;
-    gap: 3px;
-    min-width: 58px;
-    min-height: 48px;
-    padding: 6px 8px;
-    border-radius: 16px;
-    box-shadow: 0 12px 26px rgba(30, 35, 48, 0.18);
-  }
-
-  html[data-view="mobile"] .floating-menu-button span:last-child {
-    font-size: 10px;
-    line-height: 1;
-  }
-
-  html[data-view="mobile"] .floating-menu-icon,
-  html[data-view="mobile"] .floating-menu-icon::before,
-  html[data-view="mobile"] .floating-menu-icon::after {
-    width: 17px;
-  }
-
-  html[data-view="mobile"] .floating-menu-panel {
-    width: min(320px, calc(100vw - 20px));
-    max-height: 68vh;
   }
 
   /* テーブル: ブロック表示 */
