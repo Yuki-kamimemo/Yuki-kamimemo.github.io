@@ -74,6 +74,7 @@ Assert-Contains "_includes/head.html" "og:site_name" "head include must output o
 Assert-Contains "_includes/head.html" "assets/css/tokens\.css" "head include must load public CSS tokens"
 Assert-Contains "_includes/giscus.html" 'data-mapping="pathname"' "giscus must map discussions by pathname"
 Assert-Contains "_includes/share-links.html" "twitter.com/intent/tweet" "share links must include X sharing"
+Assert-Contains "_includes/share-links.html" "mixi.social/home" "share links must include mixi2 home"
 Assert-Contains "_includes/share-links.html" "social-plugins.line.me/lineit/share" "share links must include LINE sharing"
 Assert-Contains "_includes/share-links.html" "facebook.com/sharer/sharer.php" "share links must include Facebook sharing"
 Assert-Contains "_includes/sources.html" "page\.sources" "sources include must be driven by page.sources"

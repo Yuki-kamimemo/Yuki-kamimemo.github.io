@@ -487,6 +487,15 @@ h1 {
   background: #19a871;
 }
 
+.share-link.mixi2 {
+  border-color: #16a08555;
+}
+
+.share-link.mixi2 span {
+  background: #16a085;
+  font-size: 18px;
+}
+
 .share-link.facebook {
   border-color: #3479d755;
 }
