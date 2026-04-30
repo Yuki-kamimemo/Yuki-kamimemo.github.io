@@ -517,38 +517,64 @@ h1 {
   font-weight: 800;
 }
 
-@media (max-width: 760px) {
-  .page {
-    padding: 18px 12px 48px;
+
+/* ── トグルボタン ── */
+.view-toggle-btn {
+  display: none;
+  min-height: 38px;
+  padding: 7px 14px;
+  background: var(--paper-strong);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(102, 34, 58, 0.08);
+}
+
+.view-toggle-btn:hover {
+  background: var(--red-soft);
+}
+
+/* ── モバイルレイアウト（html[data-view="mobile"] が付いた場合のみ有効） ── */
+@media (max-width: 768px) {
+  html[data-view="mobile"] .page {
+    padding: 12px 10px 48px;
   }
 
-  .hero,
-  .section {
+  html[data-view="mobile"] .hero {
     border-radius: 16px;
-    padding: 20px;
+    padding: 18px 14px;
   }
 
-  .guide-list,
-  .link-grid {
+  html[data-view="mobile"] .section {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  html[data-view="mobile"] .guide-list,
+  html[data-view="mobile"] .link-grid {
     grid-template-columns: 1fr;
   }
 
-  .share-summary {
+  html[data-view="mobile"] .share-summary {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .share-open-button {
+  html[data-view="mobile"] .share-open-button {
     width: 100%;
   }
 
-  .share-links,
-  .share-copy {
+  html[data-view="mobile"] .share-links,
+  html[data-view="mobile"] .share-copy {
     grid-template-columns: 1fr;
   }
 
-  .share-link,
-  .share-copy-button {
+  html[data-view="mobile"] .share-link,
+  html[data-view="mobile"] .share-copy-button {
     width: 100%;
   }
 }
