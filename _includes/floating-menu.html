@@ -1,0 +1,50 @@
+{% assign guide_pages = site.pages | where_exp: 'item', 'item.layout == "guide"' | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
+<nav class="floating-menu" aria-label="固定メニュー" data-floating-menu>
+  <button class="floating-menu-button" type="button" aria-expanded="false" aria-controls="floating-menu-panel" data-floating-menu-button>
+    <span class="floating-menu-icon" aria-hidden="true"></span>
+    <span>メニュー</span>
+  </button>
+
+  <div class="floating-menu-panel" id="floating-menu-panel" hidden data-floating-menu-panel>
+    <div class="floating-menu-head">
+      <strong>ページ移動</strong>
+      <button class="floating-menu-close" type="button" aria-label="メニューを閉じる" data-floating-menu-close>×</button>
+    </div>
+
+    <div class="floating-menu-group">
+      <span class="floating-menu-label">基本リンク</span>
+      <a href="{{ '/' | relative_url }}">トップページ</a>
+      <a href="#top" data-floating-top>ページ上部</a>
+      <a href="#main">本文へ移動</a>
+    </div>
+
+    <div class="floating-menu-group" data-floating-sections hidden>
+      <span class="floating-menu-label">このページ</span>
+      <div class="floating-menu-links" data-floating-section-links></div>
+    </div>
+
+    <div class="floating-menu-group">
+      <span class="floating-menu-label">カテゴリ</span>
+      <a href="{{ '/race/' | relative_url }}">レース攻略</a>
+      <a href="{{ '/training/' | relative_url }}">育成方針</a>
+      <a href="{{ '/support/' | relative_url }}">サポートカード</a>
+      <a href="{{ '/factor/' | relative_url }}">因子周回</a>
+      <a href="{{ '/course/' | relative_url }}">コース解説</a>
+    </div>
+
+    {% if guide_pages.size > 0 %}
+      <div class="floating-menu-group">
+        <span class="floating-menu-label">最近の攻略メモ</span>
+        {% assign shown_guides = 0 %}
+        {% for item in guide_pages %}
+          {% unless item.url == page.url %}
+            {% if shown_guides < 4 %}
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% assign shown_guides = shown_guides | plus: 1 %}
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</nav>
