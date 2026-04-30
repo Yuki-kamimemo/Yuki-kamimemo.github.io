@@ -1,0 +1,319 @@
+---
+layout: guide
+css: guide
+title: "中距離因子周回ローテーションとおすすめウマ娘・サポカ"
+description: "ウマ娘の中距離因子周回向けに、G1中心のレースローテーション、脚質別のおすすめ周回ウマ娘、サポートカード編成、因子目標を整理した攻略メモです。"
+date: 2026-04-30
+modified: 2026-04-30
+tags: [medium-distance, factor, support-card, rotation, scenario]
+event: factor
+category: factor
+status: published
+permalink: /guides/factor/medium-distance-rotation/
+theme_color: "#d98228"
+eyebrow: "ウマ娘 因子周回メモ"
+h1: "中距離因子周回<br>ローテーションと育成セット"
+lead: "中距離S、脚質S、終盤加速の白因子を狙うための周回用メモです。2026年4月30日に中距離因子周回、汎用因子周回、Dreamsサポカ、GameTora DBをWeb検索で確認しました。"
+hero_cards_label: "中距離周回の親候補"
+hero_cards:
+  - src: "https://gametora.com/images/umamusume/characters/chara_stand_1001_100101.png"
+    alt: "スペシャルウィークの立ち絵"
+    label: "中距離・長距離を走りやすい親候補"
+    credit_name: "GameTora"
+    credit_url: "https://gametora.com/umamusume/characters/100101-special-week"
+  - src: "https://gametora.com/images/umamusume/characters/chara_stand_1017_101701.png"
+    alt: "シンボリルドルフの立ち絵"
+    label: "差し・継承固有候補"
+    credit_name: "GameTora"
+    credit_url: "https://gametora.com/umamusume/characters/101701-symboli-rudolf"
+sources:
+  - key: game8-medium-factor
+  - key: game8-factor-general
+  - key: game8-dreams-support
+  - key: gamewith-scenario
+  - key: gametora-supports
+  - key: gametora-characters
+---
+<nav class="blog-nav" aria-label="ページ内ナビゲーション">
+  <a href="#summary">結論</a>
+  <a href="#rotation">ローテ</a>
+  <a href="#characters">ウマ娘</a>
+  <a href="#supports">サポカ</a>
+  <a href="#scenario">シナリオ</a>
+  <a href="#skills">因子目標</a>
+  <a href="#sources">情報源</a>
+</nav>
+
+<section class="section" id="summary">
+  <h2 class="section-title green">結論</h2>
+  <div class="summary-grid">
+    <div class="summary-card factor">
+      <strong>周回の軸</strong>
+      中距離赤因子を両親に置き、中距離A以上で周回。G1を20戦前後走り、中距離・脚質・芝・加速・中盤速度の白因子を拾います。
+    </div>
+    <div class="summary-card high">
+      <strong>ローテの考え方</strong>
+      中距離はクラシック三冠、秋華賞、天皇賞秋、大阪杯、宝塚記念、ジャパンC、有馬記念を軸にできます。マイルA/Bなら安田記念やマイルCSも追加候補です。
+    </div>
+    <div class="summary-card critical">
+      <strong>注意点</strong>
+      赤因子を中距離に寄せたい時は、短距離・マイル・長距離をAにしすぎないのが基本。勝てるG1数と赤因子抽選候補の増えすぎを両方見ます。
+    </div>
+  </div>
+  <div class="callout green">
+    まず作るなら「先行・差し用の中距離親」を優先。中距離はコースごとに有効加速が変わるため、継承固有と白加速を脚質別に分けて作ると使い回しやすいです。
+  </div>
+</section>
+
+<section class="section" id="rotation">
+  <h2 class="section-title green">中距離周回用ローテーション</h2>
+  <div class="two-column rotation-layout">
+    <div>
+      <h3>基本ローテ: クラシック三冠・秋古馬を軸にする</h3>
+      <p>中距離A、長距離B以上のキャラで回しやすい形です。クラシック三冠と秋古馬G1を中心に、マイルが走れる時だけマイルG1を足します。</p>
+      <table class="rotation-table">
+        <thead>
+          <tr>
+            <th>時期</th>
+            <th>開催月</th>
+            <th>出走候補</th>
+            <th>狙い</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="時期">ジュニア級</td>
+            <td data-label="開催月">12月前半〜後半</td>
+            <td data-label="出走候補">阪神JF、朝日杯FS、ホープフルS</td>
+            <td data-label="狙い">中距離親ならホープフルSを優先。マイルAならジュニアマイルG1も追加します。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">クラシック前半</td>
+            <td data-label="開催月">4月前半〜6月後半</td>
+            <td data-label="出走候補">桜花賞、皐月賞、NHKマイルC、オークス、日本ダービー、安田記念、宝塚記念</td>
+            <td data-label="狙い">皐月賞、日本ダービー、オークスを軸にG1数を確保。牝馬は桜花賞も走りやすいです。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">クラシック後半</td>
+            <td data-label="開催月">9月後半〜12月後半</td>
+            <td data-label="出走候補">秋華賞、菊花賞、天皇賞秋、エリザベス女王杯、マイルCS、ジャパンC、有馬記念</td>
+            <td data-label="狙い">秋華賞、天皇賞秋、ジャパンC、有馬記念を中心に、長距離が走れるなら菊花賞も採用。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">シニア前半</td>
+            <td data-label="開催月">3月後半〜6月後半</td>
+            <td data-label="出走候補">大阪杯、天皇賞春、ヴィクトリアマイル、安田記念、宝塚記念</td>
+            <td data-label="狙い">大阪杯と宝塚記念は中距離親の主力。スタミナに余裕があれば天皇賞春も候補です。</td>
+          </tr>
+          <tr>
+            <td data-label="時期">シニア後半</td>
+            <td data-label="開催月">9月後半〜12月後半</td>
+            <td data-label="出走候補">天皇賞秋、エリザベス女王杯、マイルCS、ジャパンC、有馬記念</td>
+            <td data-label="狙い">秋古馬G1で相性を厚くし、G1 20戦前後に近づけます。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rotation-flow" aria-label="中距離因子周回ローテーションの流れ">
+      <div class="rotation-step">
+        <span>1</span>
+        <strong>中距離赤因子を継承</strong>
+        <p>親2人に中距離因子を置き、育成キャラの中距離A以上を維持します。</p>
+      </div>
+      <div class="rotation-step">
+        <span>2</span>
+        <strong>G1を20戦前後</strong>
+        <p>中距離G1を軸に、勝てるマイル・長距離G1を足します。</p>
+      </div>
+      <div class="rotation-step">
+        <span>3</span>
+        <strong>加速を脚質別に確保</strong>
+        <p>逃げ、先行、差し、追込で欲しい継承固有と白加速が変わります。</p>
+      </div>
+      <div class="rotation-step">
+        <span>4</span>
+        <strong>再獲得も使う</strong>
+        <p>中距離3や欲しい白因子が出ない時は因子再獲得で試行回数を増やします。</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>距離適性別の調整表</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>適性</th>
+        <th>採用するG1</th>
+        <th>周回向きの考え方</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="適性"><span class="badge green">中距離A・長距離B以上</span></td>
+        <td data-label="採用するG1">ホープフルS、皐月賞、日本ダービー、オークス、秋華賞、菊花賞、天皇賞秋、大阪杯、宝塚記念、ジャパンC、有馬記念</td>
+        <td data-label="周回向きの考え方">もっとも安定。中距離親の基本形です。</td>
+      </tr>
+      <tr>
+        <td data-label="適性"><span class="badge orange">マイルA/B</span></td>
+        <td data-label="採用するG1">阪神JF/朝日杯FS、桜花賞、NHKマイルC、安田記念、ヴィクトリアマイル、マイルCS</td>
+        <td data-label="周回向きの考え方">G1数を増やせます。中距離赤因子を狙う時はマイルA化しすぎに注意。</td>
+      </tr>
+      <tr>
+        <td data-label="適性"><span class="badge blue">長距離C以下</span></td>
+        <td data-label="採用するG1">中距離G1中心。菊花賞、天皇賞春、有馬記念は勝率次第で外す</td>
+        <td data-label="周回向きの考え方">勝率を落とさないことを優先。無理な長距離G1より中距離勝利を厚くします。</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="mini-source">
+    参考:
+    <a href="https://game8.jp/umamusume/688616" target="_blank" rel="noopener noreferrer">Game8 チャンミ6月中距離因子周回</a>、
+    <a href="https://game8.jp/umamusume/460250" target="_blank" rel="noopener noreferrer">Game8 因子周回のやり方</a>
+  </p>
+</section>
+
+<section class="section" id="characters">
+  <h2 class="section-title orange">脚質別おすすめ周回ウマ娘</h2>
+  <div class="callout orange">
+    継承親は本育成キャラと同名にできません。中距離はクラシック路線を走れるキャラが多く、親候補を本番キャラからずらしやすいのが強みです。
+  </div>
+
+  <div class="card-gallery image-roster" aria-label="中距離周回で候補にしやすいウマ娘画像">
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1068_106801.png" alt="キタサンブラックの立ち絵">
+      <figcaption>キタサンブラック<br><span class="badge red">逃げ・先行</span><br><a href="https://gametora.com/umamusume/characters/106801-kitasan-black" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1001_100101.png" alt="スペシャルウィークの立ち絵">
+      <figcaption>スペシャルウィーク<br><span class="badge orange">先行・差し</span><br><a href="https://gametora.com/umamusume/characters/100101-special-week" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1017_101701.png" alt="シンボリルドルフの立ち絵">
+      <figcaption>シンボリルドルフ<br><span class="badge blue">差し</span><br><a href="https://gametora.com/umamusume/characters/101701-symboli-rudolf" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+    <figure class="card-tile">
+      <img src="https://gametora.com/images/umamusume/characters/chara_stand_1006_100601.png" alt="オグリキャップの立ち絵">
+      <figcaption>オグリキャップ<br><span class="badge blue">先行・差し</span><br><a href="https://gametora.com/umamusume/characters/100601-oguri-cap" target="_blank" rel="noopener noreferrer">引用元: GameTora</a></figcaption>
+    </figure>
+  </div>
+
+  <div class="style-grid">
+    <div class="style-card escape">
+      <h3>逃げ</h3>
+      <span class="badge red">先頭条件の親</span>
+      <ul>
+        <li>セイウンスカイ、キタサンブラック、サイレンススズカ、ミホノブルボンを候補にします。</li>
+        <li>狙う因子は中距離、逃げ、先駆け、地固め、危険回避、先頭プライド、中距離直線。</li>
+        <li>逃げは序盤・中盤の位置取り白因子を厚くし、終盤加速の順位条件を満たしやすくします。</li>
+      </ul>
+    </div>
+    <div class="style-card front">
+      <h3>先行</h3>
+      <span class="badge orange">汎用枠</span>
+      <ul>
+        <li>スペシャルウィーク、トウカイテイオー、オグリキャップ、メジロアルダンを候補にします。</li>
+        <li>狙う因子は中距離、先行、真っ向勝負、鍔迫り合い、食らいつき、中距離コーナー。</li>
+        <li>先行親はチャンミ・LoHどちらでも使いやすく、まず1体作る価値が高いです。</li>
+      </ul>
+    </div>
+    <div class="style-card late">
+      <h3>差し</h3>
+      <span class="badge blue">加速親を厚く</span>
+      <ul>
+        <li>シンボリルドルフ、メジロライアン、グラスワンダー、スペシャルウィークを候補にします。</li>
+        <li>狙う因子は中距離、差し、乗り換え上手、差し切り体勢、十万バリキ、中距離直線。</li>
+        <li>差しは加速と中盤速度を両方持たせると、後方から届く展開を作りやすくなります。</li>
+      </ul>
+    </div>
+    <div class="style-card late">
+      <h3>追込</h3>
+      <span class="badge blue">用途を決めて作る</span>
+      <ul>
+        <li>ナリタタイシン、ゴールドシップ、ドゥラメンテ、追込改造オグリキャップを候補にします。</li>
+        <li>狙う因子は中距離、追込、切れ味、直線一気、追込直線、中距離コーナー。</li>
+        <li>追込は本番条件に左右されやすいので、明確に使う予定がある時に優先します。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="supports">
+  <h2 class="section-title red">おすすめサポートカード</h2>
+  <div class="callout red">
+    因子周回ではステータス上振れより、レースボーナスと欲しい白因子を優先します。DreamsならSSRカジノドライヴを軸に、5タイプ以上編成で安定させます。
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>用途</th>
+        <th>編成の考え方</th>
+        <th>狙い</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="用途"><span class="badge red">逃げ・先行</span></td>
+        <td data-label="編成の考え方">スピード2、スタミナ/パワー、根性、賢さ、シナリオリンク。逃げ・先行ヒント持ちを混ぜます。</td>
+        <td data-label="狙い">序盤位置取り、真っ向勝負、鍔迫り合い、中距離直線・コーナー。</td>
+      </tr>
+      <tr>
+        <td data-label="用途"><span class="badge blue">差し・追込</span></td>
+        <td data-label="編成の考え方">スピード2、パワー、スタミナ、賢さ、シナリオリンク。後方加速サポカはレンタル候補です。</td>
+        <td data-label="狙い">乗り換え上手、差し切り体勢、切れ味、直線一気、尻尾上がり。</td>
+      </tr>
+      <tr>
+        <td data-label="用途"><span class="badge green">白因子量</span></td>
+        <td data-label="編成の考え方">完凸の手持ち・配布・交換サポカも採用。ステータスよりヒントとレースボーナスを見ます。</td>
+        <td data-label="狙い">欲しいスキルを上位まで取り、因子化の試行回数を増やします。</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section" id="scenario">
+  <h2 class="section-title green">おすすめ周回シナリオ</h2>
+  <div class="summary-grid">
+    <div class="summary-card factor">
+      <strong>プロジェクトL'Arc</strong>
+      試行回数重視なら有力。短時間で回しやすく、中距離赤因子を掘る周回に向きます。
+    </div>
+    <div class="summary-card high">
+      <strong>Dreams</strong>
+      最新シナリオ因子や本育成練習も兼ねる時に選択。サポカ編成の感触を確認できます。
+    </div>
+    <div class="summary-card critical">
+      <strong>レース多めシナリオ</strong>
+      G1勝利数と白因子を厚くしたい時の選択肢。1周が重くなるので休日向けです。
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills">
+  <h2 class="section-title">因子目標と終了ライン</h2>
+  <div class="skill-priority">
+    <div class="skill-row">
+      <div class="skill-rank"><strong>S</strong><span class="badge red">最優先</span></div>
+      <div>
+        <h3>中距離赤因子、脚質赤因子</h3>
+        <p>中距離因子を最優先。使う脚質の赤因子もS狙いのために価値が高いです。</p>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-rank"><strong>A</strong><span class="badge orange">加速</span></div>
+      <div>
+        <h3>アングリング系、真っ向勝負、鍔迫り合い、乗り換え上手、差し切り体勢、切れ味</h3>
+        <p>コースごとに有効加速が変わるため、脚質に合う加速を親側に持たせます。</p>
+      </div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-rank"><strong>A</strong><span class="badge green">速度</span></div>
+      <div>
+        <h3>中距離直線、中距離コーナー、脚質直線、脚質コーナー、尻尾上がり</h3>
+        <p>加速の次に厚くしたい汎用白因子。中盤で前へ出るための速度因子を優先します。</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout gray">
+    終了ラインは「中距離3、使う脚質、加速白因子1つ以上、速度白因子2つ以上」。片親を先に妥協ラインで完成させると進めやすいです。
+  </div>
+</section>

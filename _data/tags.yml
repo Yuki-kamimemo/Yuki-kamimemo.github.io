@@ -5,6 +5,12 @@ short-distance:
   label: "短距離"
 mile:
   label: "マイル"
+medium-distance:
+  label: "中距離"
+long-distance:
+  label: "長距離"
+dirt:
+  label: "ダート"
 kyoto:
   label: "京都"
 turf:

@@ -46,6 +46,18 @@ game8-mile-factor:
   name: "Game8 チャンミマイル因子周回"
   url: "https://game8.jp/umamusume/595812"
   note: "マイル因子周回のおすすめキャラ、継承親、マイル赤因子、加速スキル、育成中ローテーションの確認に使用。確認日: 2026-04-30。"
+game8-medium-factor:
+  name: "Game8 チャンミ6月中距離因子周回"
+  url: "https://game8.jp/umamusume/688616"
+  note: "中距離因子周回のおすすめキャラ、中距離赤因子、加速スキル、G1中心ローテーションの確認に使用。確認日: 2026-04-30。"
+game8-long-factor:
+  name: "Game8 LoH長距離因子周回"
+  url: "https://game8.jp/umamusume/601311"
+  note: "長距離因子周回のおすすめキャラ、長距離赤因子、マイル〜長距離G1ローテ、上位スキル取得方針の確認に使用。確認日: 2026-04-30。"
+game8-dirt-factor:
+  name: "Game8 LoHダート因子周回"
+  url: "https://game8.jp/umamusume/680742"
+  note: "ダート因子周回のおすすめキャラ、ダート向け親候補、G1中心ローテ、因子再獲得方針の確認に使用。確認日: 2026-04-30。"
 game8-factor-general:
   name: "Game8 因子周回のやり方"
   url: "https://game8.jp/umamusume/460250"
