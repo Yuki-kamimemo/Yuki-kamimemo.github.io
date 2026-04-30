@@ -12,7 +12,8 @@
   </main>
   {% include floating-menu.html %}
   {% include share-links.html mode='dialog' %}
-  <script src="{{ '/assets/js/view-toggle.js' | relative_url }}"></script>
-  <script src="{{ '/assets/js/floating-menu.js' | relative_url }}"></script>
+  {% assign asset_version = site.time | date: '%s' %}
+  <script src="{{ '/assets/js/view-toggle.js' | relative_url }}?v={{ asset_version }}"></script>
+  <script src="{{ '/assets/js/floating-menu.js' | relative_url }}?v={{ asset_version }}"></script>
 </body>
 </html>
