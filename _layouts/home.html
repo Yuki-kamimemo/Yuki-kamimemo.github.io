@@ -6,9 +6,7 @@
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
   <main class="page" id="main">
-    <div class="page-actions page-actions-top">
-      {% include view-toggle.html %}
-    </div>
+    {% include view-toggle.html %}
     {{ content }}
     {% include share-links.html %}
   </main>
