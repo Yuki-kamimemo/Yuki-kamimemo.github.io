@@ -30,6 +30,7 @@
     const setOpen = (isOpen) => {
       panel.hidden = !isOpen;
       button.setAttribute("aria-expanded", String(isOpen));
+      button.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
       menu.classList.toggle("is-open", isOpen);
     };
 

@@ -1,6 +1,6 @@
 {% assign guide_pages = site.pages | where_exp: 'item', 'item.layout == "guide"' | where_exp: 'item', 'item.status != "draft"' | sort: 'date' | reverse %}
 <nav class="floating-menu" aria-label="固定メニュー" data-floating-menu>
-  <button class="floating-menu-button" type="button" aria-expanded="false" aria-controls="floating-menu-panel" data-floating-menu-button>
+  <button class="floating-menu-button" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="floating-menu-panel" data-floating-menu-button>
     <span class="floating-menu-icon" aria-hidden="true"></span>
     <span class="floating-menu-button-text">メニュー</span>
   </button>
