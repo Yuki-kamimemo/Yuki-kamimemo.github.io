@@ -4,7 +4,7 @@
 
 ## 基本方針
 
-- 軽量な静的HTML/CSS/Jekyllで作る。フォーム、会員機能、広告、アクセス解析、Cookie、独自APIは追加しない。
+- 軽量な静的HTML/CSS/Jekyllで作る。会員機能、広告、アクセス解析、Cookie、独自APIは追加しない。感想・情報提供用のGoogleフォーム外部リンクは利用可とし、個人情報を収集しない方針を明記する。
 - 日本語ページとして作り、`<html lang="ja">` を使う。
 - 公開サイトとしてSEO、アクセシビリティ、引用元導線、非公式表記を必ず入れる。
 - CSSは既存の `assets/css/home.css` と `assets/css/guide.css` に合わせ、新しい見た目や大きな抽象化を増やさない。
@@ -109,7 +109,7 @@ sources:
 - 攻略ページ一覧: `.section`、`.guide-list`、`.guide-card`、`.button`
 - 公式リンク: `.link-grid`、`.link-card.official`
 - 攻略サイトリンク: `.link-grid`、`.link-card.strategy`
-- このサイトについて: `.notice` に非公式、権利元と無関係、AI利用、確認時点の攻略メモ、最終更新日を書く
+- このサイトについて: トップページ下部には `/about/` への短い導線を置く。非公式、権利元と無関係、AI利用、確認時点の攻略メモ、個人情報を収集しない方針、コメントとGoogleフォームの扱いは `/about/` にまとめる。
 
 ## ガイドページ
 
@@ -132,6 +132,8 @@ sources:
 ## コメントとSNS共有
 
 - ガイドページのコメント欄は `giscus` を使い、GitHub Discussionsに保存する。独自投稿フォーム、DB、会員機能、コメント保存APIは追加しない。
+- コメントにはGitHubアカウントが必要であること、個人情報や公開したくない情報を投稿しないことをコメント欄付近または `/about/` に明記する。
+- GitHubアカウントがない閲覧者向けにGoogleフォーム外部リンクを使える。フォーム回答はサイト改善のみに利用し、個人情報を収集しないこと、個人情報を含めた回答を送信しないことを明記する。
 - コメントは記事ごとに分けるため `data-mapping="pathname"` を維持する。
 - giscus設定は既存の `data-repo`、`data-repo-id`、`data-category`、`data-category-id`、`data-input-position="top"`、`data-theme="preferred_color_scheme"`、`data-lang="ja"` を維持する。
 - SNS共有リンクは `_includes/share-links.html` を使い、`home`、`default`、`guide` layoutから自動挿入する。本文へ重複して書かない。
