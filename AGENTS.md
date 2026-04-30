@@ -141,9 +141,26 @@ sources:
 
 - 新規CSSを作る前に既存クラスを再利用する。
 - `:focus-visible` とスキップリンクを維持する。
-- モバイルでは1カラムに落とし、表は `data-label` で読める形にする。
 - `badge`、`callout`、`summary-card`、`style-card`、`support-card` の色分けは既存の意味に合わせる。
 - テキストやリンクが画像上で読めない場合は、背景色や影で可読性を優先する。
+
+## PC/スマホ表示切り替え
+
+**デフォルト表示はPC版。スマホ版はユーザーが明示的に切り替える。**
+
+- `@media (max-width: 768px)` 単独ではレイアウトを変更しない。
+- モバイルレイアウトは `html[data-view="mobile"]` が付与されたときのみ有効化する。
+  ```css
+  @media (max-width: 768px) {
+    html[data-view="mobile"] .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* 他のモバイル向けグリッド変更も同様 */
+  }
+  ```
+- `_includes/view-toggle.html`: トップバーに切り替えボタンを配置。スマホ幅（≤768px）のみ表示。
+- `assets/js/view-toggle.js`: `html` の `data-view` を `"desktop"` / `"mobile"` で切り替え。`localStorage` キー `preferredView` で設定を保持。デフォルトは `"desktop"`。
+- ボタンラベル: `"スマホ版で見る"` → `"PC版に戻す"` で表示状態を示す。
+- 表は `data-label` 属性を使いブロック表示できる状態を維持する（モバイル版有効時に使用）。
+- このトグル動作は今後も維持する。削除・変更する場合はこのセクションも更新する。
 
 ## 新規ページ作成
 
