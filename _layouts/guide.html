@@ -10,6 +10,7 @@
   <main class="page" id="top">
     <div class="page-actions page-actions-top">
       <a href="{{ '/' | relative_url }}">トップページへ戻る</a>
+      {% include view-toggle.html %}
     </div>
 
     <article class="hero" id="main">
@@ -49,5 +50,6 @@
     {% include share-links.html %}
     {% include footer.html %}
   </main>
+  <script src="{{ '/assets/js/view-toggle.js' | relative_url }}"></script>
 </body>
 </html>
