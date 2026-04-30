@@ -6,6 +6,7 @@
         {% if source.key %}
           {% assign source_data = site.data.sources[source.key] %}
         {% else %}
+          {% comment %}互換用フォールバック。新規記事は _data/sources.yml の key 参照を優先する。{% endcomment %}
           {% assign source_data = source %}
         {% endif %}
         <div class="source-card">

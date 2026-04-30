@@ -1,3 +1,4 @@
+{% comment %}404など、感想導線を出さないページは front matter の feedback: false で抑制する。{% endcomment %}
 {% if site.feedback_form_url and page.feedback != false %}
   <section class="section feedback-section" id="feedback" aria-labelledby="feedback-heading">
     <div class="feedback-summary">

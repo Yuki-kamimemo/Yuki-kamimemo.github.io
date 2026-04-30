@@ -6,6 +6,9 @@ timezone: Asia/Tokyo
 future: true
 feedback_form_url: https://forms.gle/jjq2Z1DWqXUJLi7v6
 
+social:
+  name: ウマ娘 レース攻略メモ
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
@@ -29,6 +32,8 @@ collections:
     permalink: /guides/course/:path/
 
 defaults:
+  - scope: { path: "" }
+    values: { image: /assets/og-default.png }
   - scope: { type: race }
     values: { layout: guide, category: race, css: guide }
   - scope: { type: training }

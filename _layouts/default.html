@@ -5,12 +5,17 @@
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
-  <main class="page" id="main">
+  <main class="page" id="{% if page.layout == 'guide' or page.css == 'guide' %}top{% else %}main{% endif %}">
+    {% unless page.layout == 'guide' or page.css == 'guide' %}
     {% include view-toggle.html %}
+    {% endunless %}
     {{ content }}
+    {% unless page.layout == 'guide' or page.css == 'guide' %}
     {% include feedback-form.html %}
+    {% endunless %}
   </main>
   {% include floating-menu.html %}
+  {% comment %}floating-menu 内の共有ボタンは、この dialog include と対で動作する。{% endcomment %}
   {% include share-links.html mode='dialog' %}
   {% assign asset_version = site.time | date: '%s' %}
   <script src="{{ '/assets/js/view-toggle.js' | relative_url }}?v={{ asset_version }}"></script>

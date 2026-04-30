@@ -74,9 +74,9 @@
         } else {
           dialog.setAttribute("open", "");
         }
-        status.textContent = "";
-        copyButton.textContent = "コピー";
-        urlInput.select();
+        if (status) status.textContent = "";
+        if (copyButton) copyButton.textContent = "コピー";
+        urlInput?.select();
       };
 
       openButtons.forEach((openButton) => {
@@ -90,18 +90,15 @@
       });
 
       copyButton?.addEventListener("click", async () => {
-        const shareUrl = copyButton.dataset.shareCopy || copyButton.dataset.shareUrl || urlInput.value;
+        const shareUrl = copyButton.dataset.shareCopy || copyButton.dataset.shareUrl || urlInput?.value;
+        if (!shareUrl) return;
         try {
-          if (navigator.clipboard && window.isSecureContext) {
-            await navigator.clipboard.writeText(shareUrl);
-          } else {
-            urlInput.select();
-            document.execCommand("copy");
-          }
-          status.textContent = "URLをコピーしました。";
+          await navigator.clipboard.writeText(shareUrl);
+          if (status) status.textContent = "URLをコピーしました。";
           copyButton.textContent = "コピー済み";
         } catch (error) {
-          status.textContent = "コピーできませんでした。URL欄からコピーしてください。";
+          urlInput?.select();
+          if (status) status.textContent = "コピーできませんでした。URL欄からコピーしてください。";
         }
       });
     })();

@@ -11,7 +11,8 @@
 
   function updateButtonVisibility(btn) {
     if (!btn) return;
-    btn.style.display = window.innerWidth <= BREAKPOINT ? 'block' : 'none';
+    var current = document.documentElement.dataset.view || 'desktop';
+    btn.style.display = window.innerWidth <= BREAKPOINT || current === 'mobile' ? 'block' : 'none';
   }
 
   function init() {
@@ -26,6 +27,7 @@
         var next = current === 'mobile' ? 'desktop' : 'mobile';
         localStorage.setItem(STORAGE_KEY, next);
         applyView(next, btn);
+        updateButtonVisibility(btn);
       });
     }
 

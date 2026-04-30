@@ -1,6 +1,7 @@
 (function () {
   const menus = document.querySelectorAll("[data-floating-menu]");
   if (!menus.length) return;
+  const menuStates = [];
 
   menus.forEach((menu) => {
     const button = menu.querySelector("[data-floating-menu-button]");
@@ -33,6 +34,7 @@
       button.setAttribute("aria-label", isOpen ? "メニューを閉じる" : "メニューを開く");
       menu.classList.toggle("is-open", isOpen);
     };
+    menuStates.push({ menu, panel, button, setOpen });
 
     button.addEventListener("click", () => {
       setOpen(panel.hidden);
@@ -47,14 +49,20 @@
       if (event.target.closest("a")) setOpen(false);
     });
 
-    document.addEventListener("click", (event) => {
+  });
+
+  document.addEventListener("click", (event) => {
+    menuStates.forEach(({ menu, panel, setOpen }) => {
       if (!panel.hidden && !menu.contains(event.target)) {
         setOpen(false);
       }
     });
+  });
 
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !panel.hidden) {
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    menuStates.forEach(({ panel, button, setOpen }) => {
+      if (!panel.hidden) {
         setOpen(false);
         button.focus();
       }
@@ -64,6 +72,7 @@
   function collectSectionItems() {
     const seen = new Set();
     const items = [];
+    // ガイドページは手書きナビを優先し、通常ページはセクション見出しから補完する。
     const navLinks = document.querySelectorAll(".blog-nav a[href^='#']");
 
     navLinks.forEach((link) => {

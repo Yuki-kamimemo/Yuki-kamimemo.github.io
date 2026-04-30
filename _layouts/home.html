@@ -11,6 +11,7 @@
     {% include feedback-form.html %}
   </main>
   {% include floating-menu.html %}
+  {% comment %}floating-menu 内の共有ボタンは、この dialog include と対で動作する。{% endcomment %}
   {% include share-links.html mode='dialog' %}
   {% assign asset_version = site.time | date: '%s' %}
   <script src="{{ '/assets/js/view-toggle.js' | relative_url }}?v={{ asset_version }}"></script>
