@@ -4,6 +4,7 @@ url: https://yuki-kamimemo.github.io
 lang: ja
 timezone: Asia/Tokyo
 future: true
+feedback_form_url: https://forms.gle/jjq2Z1DWqXUJLi7v6
 
 plugins:
   - jekyll-feed

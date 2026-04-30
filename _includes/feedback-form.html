@@ -1,0 +1,11 @@
+{% if site.feedback_form_url and page.feedback != false %}
+  <section class="section feedback-section" id="feedback" aria-labelledby="feedback-heading">
+    <div class="feedback-summary">
+      <div>
+        <h2 class="section-title green" id="feedback-heading">感想・情報提供</h2>
+        <p>GitHubアカウントなしでも、攻略メモへの感想、誤りの指摘、追加してほしい内容を送れます。</p>
+      </div>
+      <a class="feedback-button" href="{{ site.feedback_form_url }}" target="_blank" rel="noopener noreferrer">フォームを開く</a>
+    </div>
+  </section>
+{% endif %}
